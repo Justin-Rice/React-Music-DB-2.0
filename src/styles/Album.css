@@ -1,0 +1,104 @@
+@font-face {
+    font-family: Lex;
+    src: url('../assets/fonts/Lexend-VariableFont_wght.ttf');
+}
+.album-container{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px 12px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+.album-card{
+    height: 120px;
+    width: 350px;
+    background-color: rgb(77, 74, 110);
+    background-color: rgb(54, 47, 73);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* gap: 80px; */
+    border-radius: 5px;
+    /* border: solid 3px teal; */
+    transition: 0.5s;
+    animation: fadeinLoad 1s 0.4s forwards;
+    opacity: 0;
+    /* opacity: 50%; */
+    box-shadow: -1px -1px 9px 1px rgba(0,0,0,0.5);
+-webkit-box-shadow: -1px -1px 9px 1px rgba(0,0,0,0.5);
+-moz-box-shadow: -1px -1px 9px 1px rgba(0,0,0,0.5);
+
+
+ box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+-webkit-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+-moz-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+}
+
+.album-card:hover{
+    transform: scale(1.03);
+}
+
+.artist-image{
+  height: 400px;
+  margin: 0 auto;
+}
+
+.artist-banner{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.card-image{
+    height: 120px;
+    width: 120px;
+    /* margin-top: 10px;  */
+    /* border-radius-top-left: 5px; */
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.card-content{
+    font-family: Lex;
+    font-weight: 400;
+    letter-spacing: 2px;
+    width: 225px;
+    height: 120px;
+    /* background-color: green; */
+    color: rgb(255, 255, 255);
+}
+.card-title{
+    height: 65px;
+    width: 215px;
+    /* background-color: red; */
+    font-size: 25px;
+    /* white-space: nowrap; */
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+
+  
+  @keyframes fadeinLoad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@media screen and (min-width: 480px) {
+    .album-card{
+        size: 80%;
+    }
+
+}
