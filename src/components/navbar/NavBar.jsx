@@ -1,10 +1,9 @@
 import React from 'react';
 import '../../styles/NavBar.css'
-import { useState } from 'react';
 
 
 export default function NavBar(props){
-    const [searchClass, setSearchClass] = useState('input-small');
+   
     // const [searchText, setSearchText] = useState('');
 
     // console.log(props)
