@@ -3,8 +3,6 @@ import AlbumCard  from './AlbumCard';
 import {useState, useEffect} from 'react';
 import NavBar from '../navbar/NavBar';
 
-
-
 export default function AlbumContainer(props){
     //state 
     const [artistInfo, setArtistInfo] = useState([]);
@@ -24,15 +22,18 @@ export default function AlbumContainer(props){
 
       //run once on load
       useEffect(()=>{
-        preload(randomArtist)
+        setTimeout(()=>{
+          preload(defaultArtists)
+
+        },100)
        },[])
   
     //async function that populates page based on random artist in array    
-    async function preload(randomArtist){
+    async function preload(defaultArtists){
+      randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
         let artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
         .then(response=> response.json())
         .then(data => {
-          
             console.log(data)
           // variable that contains artist name, image, and genres 
          let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres]]
@@ -43,14 +44,12 @@ export default function AlbumContainer(props){
       //get request with artist ID grab all albums from artist 
           // console.log(artistID);
     
-    
       // display those albums to user
         await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album&market=US&limit=30',searchParams)
        .then(response=> response.json())
        .then(data => {
          console.log(data)
         setAlbums([...data.items])})
-       
       }
 
       function handleSearchText(e){
@@ -85,18 +84,14 @@ export default function AlbumContainer(props){
       //get request with artist ID grab all albums from artist 
           console.log(artistID);
     
-    
       //display those albums to user
         await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album&market=US&limit=30',searchParams)
        .then(response=> response.json())
       .then(data => {setAlbums([...data.items])})
-      
-      
       }
-      let genreArr =  artistInfo?.[2];
-      let genre = genreArr?.[0];
      
-    return (<div>
+    return (
+    <div>
         <NavBar
             onSearchEnter={handleSearchEnter} 
             searchClass={searchClass}
@@ -105,25 +100,24 @@ export default function AlbumContainer(props){
             search={searchText} 
             onSearchText={handleSearchText}
          />
-    <div className="artist-banner">
+      
+        <div className="artist-banner">
             <div className="text">{artistInfo[0]}</div>  
             <div className="artist-genre">{
-            //artistInfo?.[2]?.[0] + artistInfo?.[2]?.[1]
               artistInfo?.[2]?.map((genre, key)=>{
                 return <span className='genre' key={key}>{genre}</span>
               })
             }</div>
-           < img className='artist-image' src={artistInfo[1]} alt="text"  />
-    </div>
+         { props.accessToken && <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />}
+        </div>
         <div className='album-container'>
-            
            { albums.map((album, key)=>{
-            // console.log(check)
            return <AlbumCard accessToken={props.accessToken} key={key} albumData={album}></AlbumCard>
 
            })
-        }
+            }
            
         </div>
-        </div>)
+    </div>
+        )
 }

@@ -6,14 +6,22 @@
     width: 95%;
     margin: 0 auto;
     display: flex;
-    align-items: center;
+    /* grid-template-columns: ;
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    align-items: space-between;
+    align-content: space-between; */
+    align-items: center; 
+    align-content: flex-end;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+
     gap: 20px 12px;
     margin-top: 60px;
-    flex-wrap: wrap;
+    max-width: 1350px;
 }
 .album-card{
-    height: 120px;
+  
+    height: 140px;
     width: 350px;
     background-color: rgb(77, 74, 110);
     background-color: rgb(54, 47, 73);
@@ -53,8 +61,8 @@
 }
 
 .card-image{
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 140px;
     /* margin-top: 10px;  */
     /* border-radius-top-left: 5px; */
     border-bottom-left-radius: 5px;
