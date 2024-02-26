@@ -6,14 +6,13 @@ import NavBar from '../navbar/NavBar';
 
 
 export default function AlbumContainer(props){
+    //state 
     const [artistInfo, setArtistInfo] = useState([]);
     const [albums, setAlbums] = useState([]);
     const [searchClass, setSearchClass] = useState('input-small');
     const [searchText, setSearchText] = useState('');
-
     let defaultArtists  = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','Mavi','tobi lou', 'redveil']
     let randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
-   
     let searchParams = {
         method: 'GET',
         headers: {
@@ -22,22 +21,13 @@ export default function AlbumContainer(props){
         }
     
       }
-    
-    // const setRandom = () =>{
-    //   return new Promise((resolve, reject) => {
-    //     // let defaultArtists = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','sad','tobi lou']
-    //     defaultArtists  = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','Mavi','tobi lou', 'redveil']
-    //      randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
-    //      console.log(randomArtist)
-    //     resolve();
-    //   })
-    // }
-    
-      //
-    useEffect(()=>{
-      // setRandom().then(preload(randomArtist))   
-      preload(randomArtist)
-     },[])
+
+      //run once on load
+      useEffect(()=>{
+        preload(randomArtist)
+       },[])
+  
+    //async function that populates page based on random artist in array    
     async function preload(randomArtist){
         let artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
         .then(response=> response.json())
@@ -77,7 +67,7 @@ export default function AlbumContainer(props){
           document.getElementById('search').focus();
       } 
       }
-      //function that runs when user hits enter while focued on seacrh input 
+      //async function that fetchs api data based on what user typed in search box
      async function handleSearchEnter(){
       setAlbums([]);
       setArtistInfo([]);
@@ -117,7 +107,12 @@ export default function AlbumContainer(props){
          />
     <div className="artist-banner">
             <div className="text">{artistInfo[0]}</div>  
-            <div className="artist-genre">{genre}</div>
+            <div className="artist-genre">{
+            //artistInfo?.[2]?.[0] + artistInfo?.[2]?.[1]
+              artistInfo?.[2]?.map((genre, key)=>{
+                return <span className='genre' key={key}>{genre}</span>
+              })
+            }</div>
            < img className='artist-image' src={artistInfo[1]} alt="text"  />
     </div>
         <div className='album-container'>
