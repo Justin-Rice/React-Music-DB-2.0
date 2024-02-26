@@ -11,9 +11,9 @@ export default function AlbumContainer(props){
     const [searchClass, setSearchClass] = useState('input-small');
     const [searchText, setSearchText] = useState('');
 
-
-    let defaultArtists = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine']
-    let randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)];
+    let defaultArtists  = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','Mavi','tobi lou', 'redveil']
+    let randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
+   
     let searchParams = {
         method: 'GET',
         headers: {
@@ -23,13 +23,26 @@ export default function AlbumContainer(props){
     
       }
     
-
-     useEffect(()=>{preload(randomArtist)},[])
+    // const setRandom = () =>{
+    //   return new Promise((resolve, reject) => {
+    //     // let defaultArtists = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','sad','tobi lou']
+    //     defaultArtists  = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','Mavi','tobi lou', 'redveil']
+    //      randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
+    //      console.log(randomArtist)
+    //     resolve();
+    //   })
+    // }
     
+      //
+    useEffect(()=>{
+      // setRandom().then(preload(randomArtist))   
+      preload(randomArtist)
+     },[])
     async function preload(randomArtist){
-        var artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
+        let artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
         .then(response=> response.json())
         .then(data => {
+          
             console.log(data)
           // variable that contains artist name, image, and genres 
          let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres]]
