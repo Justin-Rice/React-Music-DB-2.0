@@ -18,9 +18,11 @@
     gap: 20px 12px;
     margin-top: 60px;
     max-width: 1350px;
+    z-index: 1;
+
 }
 .album-card{
-  
+    z-index: 2;
     height: 140px;
     width: 350px;
     background-color: rgb(77, 74, 110);
@@ -53,6 +55,8 @@
 .artist-image{
   height: 400px;
   margin: 0 auto;
+  z-index: 1;
+
 }
 
 .artist-banner{

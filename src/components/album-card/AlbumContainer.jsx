@@ -4,11 +4,13 @@ import {useState, useEffect} from 'react';
 import NavBar from '../navbar/NavBar';
 
 export default function AlbumContainer(props){
+  // console.log(props)
     //state 
     const [artistInfo, setArtistInfo] = useState([]);
     const [albums, setAlbums] = useState([]);
     const [searchClass, setSearchClass] = useState('input-small');
     const [searchText, setSearchText] = useState('');
+    const [bearerCheck, setBearerCheck]= useState(false);
     let defaultArtists  = ['Tyler, The Creator','Hiatus Kaiyote','Lena Raine','Christoper Larkin','Mavi','tobi lou', 'redveil']
     let randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
     let searchParams = {
@@ -22,10 +24,31 @@ export default function AlbumContainer(props){
 
       //run once on load
       useEffect(()=>{
-        setTimeout(()=>{
-          preload(defaultArtists)
+        console.log(searchParams)
+        const timerId = setInterval(()=>{
 
-        },100)
+          if(props.accessToken !== '' ){
+            console.log(props.accessToken)
+
+            searchParams = {
+              method: 'GET',
+              headers: {
+                "Content-Type": 'application/json',
+                "Authorization" : 'Bearer ' + props.accessToken
+              }
+          
+            }
+            console.log(searchParams)
+            preload(defaultArtists)
+            clearInterval(timerId);
+          }else{
+            console.log(props.accessToken)
+            //props.getKey()
+
+            
+          }
+        
+        },1000)
        },[])
   
     //async function that populates page based on random artist in array    
