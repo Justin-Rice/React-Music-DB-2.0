@@ -1,5 +1,6 @@
-import '../../styles/Album.css';
-import '../../styles/Album-Modal.css';
+
+import '../album-modal/Album-Modal.scss';
+import './Album-Card.scss';
 import AlbumModal from '../album-modal/Album-Modal';
 import { useState} from 'react';
 

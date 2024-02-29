@@ -1,4 +1,4 @@
-import '../styles/Album.css';
+import '../components/albums-container/Albums-Container.scss';
 import AlbumsContainer from './albums-container/Albums-Container';
 import {useState} from 'react';
 import NavBar from './navbar/NavBar';

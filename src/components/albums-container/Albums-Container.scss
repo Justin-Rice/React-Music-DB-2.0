@@ -1,0 +1,50 @@
+
+.home-album-content{
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  /* grid-template-columns: ;
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: space-between;
+  align-content: space-between; */
+  align-items: center; 
+  align-content: flex-end;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  gap: 20px 12px;
+  margin-top: 60px;
+  max-width: 1350px;
+  z-index: 1;
+  
+
+}
+.artist-image{
+  height: 400px;
+  margin: 0 auto;
+  z-index: 1;
+
+}
+
+.artist-banner{
+    margin: 0 auto;
+    width: 90%;
+}
+
+
+  
+  @keyframes fadeinLoad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@media screen and (min-width: 480px) {
+    .album-card{
+        size: 80%;
+    }
+
+}
