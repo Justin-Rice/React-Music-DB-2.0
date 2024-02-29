@@ -10,7 +10,8 @@ export default function AlbumModal(props){
         }
     
       }
-      console.log(props)
+
+      // console.log(props)
      useEffect(()=>{preloadAlbum(props.albumID)},[])
 
     async function preloadAlbum(albumID){
@@ -25,9 +26,7 @@ export default function AlbumModal(props){
       //stops child element from firing onclick to close modal
       const handleChildElementClick = (e) => {
         e.stopPropagation()
-        // Do other stuff here
      }
-
     return(
         <div onClick={()=>props.setClicked(!props.clicked)} className='album-modal'>
           <div onClick={handleChildElementClick} className="album-modal-details">

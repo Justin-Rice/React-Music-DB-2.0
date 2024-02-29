@@ -25,7 +25,7 @@ export default function NavBar(props){
                 onChange={props.onSearchText}  
                 id="search" className={'input' + ' ' + props.searchClass} 
                 type="text" 
-                placeholder="Search Albums"
+                placeholder="Search Artists"
                 onKeyDown={(event)=> {
                     if(event.code == 'Enter'){
                        props.onSearchEnter();
