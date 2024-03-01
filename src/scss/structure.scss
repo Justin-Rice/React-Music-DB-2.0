@@ -1,0 +1,54 @@
+  
+ $main: rgb(58, 23, 97);
+ $secondary: rgba(28, 28, 145, 0.3);
+ $accent: orange;
+ $text: rgb(26, 168, 80);
+ $card: green;
+
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+  height: 100%;
+  background: rgb(36,15,144);
+  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgba(47,11,79,1) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  }
+
+  body{
+    // transition: all 0.5s;
+    // background-color: gray;
+    //  opacity: 80%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px; /* Mostly for vertical scrollbars */
+    height: 10px; /* Mostly for horizontal scrollbars */
+  }
+  ::-webkit-scrollbar-thumb { /* Foreground */
+    // background: #04be42;
+  }
+  ::-webkit-scrollbar-track { /* Background */
+    // background: rgba(47,11,79,0.5);
+    // background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgba(47,11,79,1) 100%);
+
+  }
+  h1, h2, h3, h4, h5, h5, h6, p{
+    margin-bottom:16px
+  }
+
+  @font-face {
+    font-family: Lex;
+    src: url("../assets/fonts/Lexend-VariableFont_wght.ttf");
+  }
+  @font-face {
+    font-family: Alata;
+    src: url("../assets/fonts/Alata-Regular.ttf");
+  }

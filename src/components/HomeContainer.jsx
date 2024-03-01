@@ -8,7 +8,7 @@ export default function HomeContainer(props){
     const [artistInfo, setArtistInfo] = useState([]);
     const [albumsInYears, setAlbumsInYears] = useState();
     const [singlesInYears, setSinglesInYears] = useState([]);
-    const [searchClass, setSearchClass] = useState('input-small');
+    const [searchClass, setSearchClass] = useState('search-bar-small');
     const [searchText, setSearchText] = useState('');
     let searchParams = {
         method: 'GET',
@@ -48,12 +48,12 @@ export default function HomeContainer(props){
         // console.log(searchText)
       }
       function handleMouseLeave(){
-       if(searchClass == 'input-large' && searchText == 0) setSearchClass('input-small')
+       if(searchClass == 'search-bar-large' && searchText == 0) setSearchClass('search-bar-small')
       }
 
       function handleSearchBarClick(){
-        if( searchClass == 'input-small' ){
-          setSearchClass('input-large')
+        if( searchClass == 'search-bar-small' ){
+          setSearchClass('search-bar-large')
           document.getElementById('search').focus();
       } 
       }
