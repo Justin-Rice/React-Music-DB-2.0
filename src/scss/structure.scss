@@ -2,7 +2,8 @@
  $main: rgb(58, 23, 97);
  $secondary: rgba(28, 28, 145, 0.3);
  $accent: orange;
- $text: rgb(26, 168, 80);
+ $text: rgb(27, 221, 102);
+ // rgb(26, 168, 80);
  $card: green;
 
 
@@ -52,3 +53,22 @@
     font-family: Alata;
     src: url("../assets/fonts/Alata-Regular.ttf");
   }
+
+  @-webkit-keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      opacity: 1;
+    }
+    50%{
+        opacity: 0;
+
+    }
+    100% {
+      -webkit-transform: translateY(200px);
+              transform: translateY(200px);
+              opacity: 0;
+    }
+  }
+
+  

@@ -3,6 +3,7 @@ import AlbumsContainer from './albums-container/Albums-Container';
 import {useState} from 'react';
 import NavBar from './navbar/NavBar';
 
+
 export default function HomeContainer(props){
     //state 
     const [artistInfo, setArtistInfo] = useState([]);
@@ -60,7 +61,7 @@ export default function HomeContainer(props){
       //async function that fetchs api data based on what user typed in search box
      async function handleSearchEnter(){
       // setAlbums([]);
-      setArtistInfo([]);
+      // setArtistInfo([]);
       //get request using search token 
         
         var artistID = await fetch('https://api.spotify.com/v1/search?q=' +searchText +'&type=artist' , searchParams)
@@ -142,12 +143,12 @@ export default function HomeContainer(props){
           search={searchText} 
           onSearchText={handleSearchText}
       />
-      
+     
       <div className="artist-banner">
-          <div className="text">{artistInfo[0]}</div>  
+          <div className="artist-name">{artistInfo[0]}</div>  
           <div className="artist-genre">
             {artistInfo?.[2]?.map((genre, key)=>{
-              return <span className='genre' key={key}>{genre}</span>
+              return <span className='artist-genre' key={key}>{genre}<br/></span>
             })}
         </div>
         { props.accessToken && <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />}
