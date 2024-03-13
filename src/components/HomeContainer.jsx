@@ -20,7 +20,6 @@ export default function HomeContainer(props){
     
       }
 
-  
     //async function that populates page based on random artist in array  NOT ACTIVE
     async function preload(defaultArtists){
       randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
@@ -60,16 +59,17 @@ export default function HomeContainer(props){
       }
       //async function that fetchs api data based on what user typed in search box
      async function handleSearchEnter(){
-      // setAlbums([]);
-      // setArtistInfo([]);
+       setAlbumsInYears([]);
+       setSinglesInYears([])
+      setArtistInfo([]);
       //get request using search token 
         
         var artistID = await fetch('https://api.spotify.com/v1/search?q=' +searchText +'&type=artist' , searchParams)
         .then(response=> response.json())
         .then(data => {
-          console.log(data)
+           console.log(data.artists)
          // variable that contains artist name, image, and genres 
-         let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres]]
+         let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres], data.artists.items[0].followers.total, data.artists.items[0].external_urls.spotify]
 
           setArtistInfo( [...artistBundle])
 
@@ -133,6 +133,8 @@ export default function HomeContainer(props){
       })
       }
 
+      console.log(artistInfo)
+
     return (
     <div className='home-container'>
       <NavBar
@@ -143,16 +145,28 @@ export default function HomeContainer(props){
           search={searchText} 
           onSearchText={handleSearchText}
       />
-     
-      <div className="artist-banner">
-          <div className="artist-name">{artistInfo[0]}</div>  
-          <div className="artist-genre">
+
+    {artistInfo !='' &&  
+     <div className="artist-banner">
+      <div className="artist-name">{artistInfo[0]}</div>  
+          {/* <div className="artist-followers">{artistInfo[3]}</div> */}
+          <div className="artist-info">
+          { props.accessToken &&
+         <a href={artistInfo[4]} target="_blank">
+            <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />
+         </a>}
+         <div id="genre">{artistInfo?.[2].length <=1 ? 'Genre:' : 'Genres:' }</div> 
+         <div className="artist-genres">
             {artistInfo?.[2]?.map((genre, key)=>{
-              return <span className='artist-genre' key={key}>{genre}<br/></span>
+              return <span className='artist-genre' key={key}>{genre.toUpperCase()}</span>
             })}
-        </div>
-        { props.accessToken && <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />}
+          </div>
+          </div>
+          
+         
+       
       </div>
+      }
 
       <div className='home-album-content'>
         {albumsInYears != undefined  ?  

@@ -3,7 +3,6 @@ import { useEffect, ueState } from "react";
 
 export default function AlbumModal(props){
   const [albumInfo, setAlbumInfo] = useState();
-  const [isEnter, setIsEnter] = useState(true)
 
     let searchParams = {
         method: 'GET',
@@ -32,14 +31,14 @@ export default function AlbumModal(props){
           },5000)
         }
      
-        //stops child element from firing onclick to close modal
+     //stops child element from firing onclick to close modal
       function handleChildElementClick(e){
         e.stopPropagation()
      }
      
     return(
-        <div className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
-          <div  className={`album-modal-details `} onClick={handleChildElementClick}>
+         <div className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
+        <div  className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
            <div className="album-modal-top">
               <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
               <div className="album-modal-title">{albumInfo?.name}</div>

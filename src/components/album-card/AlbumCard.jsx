@@ -2,7 +2,6 @@
 import '../album-modal/Album-Modal.scss';
 import './Album-Card.scss';
 import AlbumModal from '../album-modal/Album-Modal';
-import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
 export default function AlbumCard(props){
 
@@ -17,14 +16,19 @@ export default function AlbumCard(props){
         if(isTrue){
              setClicked(!clicked)
             setIsTrue(!isTrue)
-
-        }
+            document.body.style.overflow = "hidden"  
+            // document.body.style.backdropFilter = 'blur(10px)'
+              }else{
         //else add fade class then change clicked value after 400ms animation plays
         setIsTrue(!isTrue)
+        document.body.style.overflow = "visible"  
+
         setTimeout(()=>{
          setClicked(!clicked)
+        
 
         },450)
+    }
     }
     return (
         <div onClick={handleAlbumClick}>

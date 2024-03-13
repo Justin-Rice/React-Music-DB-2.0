@@ -7,7 +7,6 @@
  $card: green;
 
 
-
 *{
     margin:0;
     padding: 0;
@@ -22,13 +21,9 @@
   background-repeat: no-repeat;
   
   }
-
-  body{
-    // transition: all 0.5s;
-    // background-color: gray;
-    //  opacity: 80%;
-  }
-
+// .home-album-content{
+//   background-color: orange;
+// }
   ::-webkit-scrollbar {
     width: 5px; /* Mostly for vertical scrollbars */
     height: 10px; /* Mostly for horizontal scrollbars */
@@ -36,7 +31,8 @@
   ::-webkit-scrollbar-thumb { /* Foreground */
     // background: #04be42;
   }
-  ::-webkit-scrollbar-track { /* Background */
+  ::-webkit-scrollbar-track { 
+    /* Background */
     // background: rgba(47,11,79,0.5);
     // background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgba(47,11,79,1) 100%);
 
@@ -54,21 +50,67 @@
     src: url("../assets/fonts/Alata-Regular.ttf");
   }
 
-  @-webkit-keyframes slide-out-top {
-    0% {
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
+
+  @keyframes fadeinLoad {
+  
+    to {
       opacity: 1;
+
+    }
+  }
+  @keyframes fadeoutLoad{
+    from {
+      opacity: 1;
+     
+    }
+    to {
+      opacity: 0;
+
+    }
+
+  }
+
+  @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-200px);
+              transform: translateY(-200px);
+      opacity: 0.8;
     }
     50%{
-        opacity: 0;
+        
 
     }
     100% {
-      -webkit-transform: translateY(200px);
-              transform: translateY(200px);
-              opacity: 0;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+              opacity: 1;
     }
   }
+
+  @-webkit-keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      // opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      // opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  
 
   
