@@ -45,11 +45,12 @@ return (
             console.log(trackLength)
             console.log(track.artists)
             console.log(featured)
+            console.log(track.external_urls.spotify)
 
            return <div key={index} className="track">
                         <div className="track-info">
                           
-                            <div className="track-name">    {explicit &&  <span class="material-symbols-outlined">explicit</span>}{name} </div>
+                            <div className="track-name">    {explicit &&  <span class="material-symbols-outlined">explicit</span>} <a target='_blank'href={track.external_urls.spotify}>{name}</a> </div>
                             <div className="track-length">{trackLength} </div>
                           
                         </div>
@@ -61,7 +62,7 @@ return (
                                 <a key={index} target="_blank" href={artist.link}>
                                     {artist.name}
                                 </a> 
-                            {(featured.length > 1) && (index != featured.length - 1 )?', ' : ''}
+                            {(featured.length > 1) && (index != featured.length - 1 )? <span className="comma">,</span> : ''}
                             </span>
                             )
                         })}
