@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: Alata;
   src: url("../assets/fonts/Alata-Regular.ttf");
 }
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
+}
 @-webkit-keyframes fadeinLoad {
   to {
     opacity: 1;
@@ -135,6 +139,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @font-face {
   font-family: Alata;
   src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
   to {
@@ -350,6 +358,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: Alata;
   src: url("../assets/fonts/Alata-Regular.ttf");
 }
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
+}
 @keyframes fadeinLoad {
   to {
     opacity: 1;
@@ -422,9 +434,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-modal-details {
   z-index: 11;
   border-radius: 8px;
+  margin-top: 10px;
   height: 600px;
-  width: 900px;
-  background-color: rgba(0, 0, 0, 0.99);
+  overflow: scroll;
+  width: 750px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(53, 26, 128)), to(rgb(44, 8, 102)));
+  background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
   -webkit-animation: slide-in-top 0.4s forwards;
           animation: slide-in-top 0.4s forwards;
 }
@@ -433,16 +448,33 @@ h1, h2, h3, h4, h5, h5, h6, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  z-index: 12;
+  position: sticky;
+  top: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-family: Lex;
+  font-size: 3.1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(27, 221, 102);
+  max-height: 250px;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
-
-.album-modal-artwork {
-  width: 25%;
+.album-modal-top .album-modal-artwork {
+  width: 250px;
+  height: 250px;
+}
+.album-modal-top .album-modal-title {
+  width: 100%;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  padding-left: 20px;
+  text-align: left;
+  max-height: 250px;
+  position: relative;
 }
 
 .fade {
@@ -493,6 +525,165 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @font-face {
   font-family: Alata;
   src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
+}
+@keyframes fadeinLoad {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeoutLoad {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+.tracklist .track {
+  margin-top: 1px;
+  margin-top: 1px;
+  overflow-x: scroll;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.tracklist .track .track-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 5px;
+}
+.tracklist .track .track-info .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
+  color: rgb(27, 221, 102);
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+  margin-right: 6px;
+}
+.tracklist .track .track-info .track-name {
+  width: 88%;
+  height: 20px;
+  scrollbar-width: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-animation: marquee 30s linear infinite;
+          animation: marquee 30s linear infinite;
+  color: rgb(27, 221, 102);
+}
+.tracklist .track .track-info .track-length {
+  margin-right: 10px;
+  color: rgb(27, 221, 102);
+}
+.tracklist .track .track-artist a {
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  color: rgb(182, 175, 175);
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: rgb(36, 15, 144);
+  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Mostly for vertical scrollbars */
+  height: 10px; /* Mostly for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */ }
+
+::-webkit-scrollbar-track {
+  /* Background */
+}
+
+h1, h2, h3, h4, h5, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+@font-face {
+  font-family: Lex;
+  src: url("../assets/fonts/Lexend-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Alata;
+  src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
   to {
@@ -550,11 +741,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 20px 12px;
@@ -565,16 +760,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   transition: 0.7s;
   -webkit-animation: fadeinLoad 1s 0.4s forwards;
           animation: fadeinLoad 1s 0.4s forwards;
-}
-
-.artist-image {
-  height: 370px;
-  margin: 0 auto;
-  z-index: 2;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-  margin-bottom: 15px;
-  margin-left: 15px;
+  font-family: Lex;
 }
 
 .artist-banner {
@@ -591,8 +777,18 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
-.artist-info {
+.artist-banner .artist-name {
+  margin-top: -15px;
+  position: relative;
+  top: -10px;
+  margin-left: 15px;
+  color: rgb(27, 221, 102);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+.artist-banner .artist-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -604,20 +800,17 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-
-.artist-name {
-  margin-top: -15px;
-  position: relative;
-  top: -10px;
+.artist-banner .artist-info .artist-image {
+  height: 370px;
+  margin: 0 auto;
+  z-index: 2;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  margin-bottom: 15px;
   margin-left: 15px;
-  color: rgb(27, 221, 102);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 3em;
-  font-weight: 600;
-  letter-spacing: 5px;
+  border-radius: 5px;
 }
-
-.artist-genre {
+.artist-banner .artist-info .artist-genre {
   margin-top: 6px;
   color: rgb(27, 221, 102);
   font-size: 16px;
@@ -628,8 +821,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-shadow: 0px 0px 2px 1px rgba(30, 27, 221, 0.6);
   -moz-box-shadow: 0px 0px 1px 1px rgba(30, 27, 221, 0.6);
 }
-
-.artist-genres {
+.artist-banner .artist-info .artist-genres {
   color: rgb(27, 221, 102);
   font-size: 1em;
   margin: 0 auto;
@@ -641,8 +833,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
-#genre {
+.artist-banner .artist-info #genre {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -651,6 +842,73 @@ h1, h2, h3, h4, h5, h5, h6, p {
   color: rgb(27, 221, 102);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 20px;
+}
+
+.album-container {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.album-container .music-type {
+  font-size: 40px;
+  color: rgb(27, 221, 102);
+  background-color: rgba(7, 212, 86, 0.1);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  text-indent: 10px;
+  padding: 2px 2px 2px 2px;
+  font-weight: 550;
+  letter-spacing: 0.8px;
+}
+.album-container .album-year {
+  font-size: 30px;
+  color: white;
+  position: relative;
+  top: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 80px;
+  width: 100%;
+  letter-spacing: 3px;
+  margin-left: 5px;
+  margin-right: 80px;
+  font-weight: 500;
+}
+.album-container .album-year::after {
+  content: "";
+  display: block;
+  width: 220px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgb(27, 221, 102);
+  opacity: 80%;
+  position: relative;
+  left: -2px;
+}
+.album-container .album-years-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px 20px;
 }
 
 @keyframes fadeinLoad {
@@ -704,6 +962,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @font-face {
   font-family: Alata;
   src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
   to {
@@ -769,17 +1031,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /* gap: 80px; */
   border-radius: 5px;
-  /* border: solid 3px teal; */
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-animation: fadeinLoad 1s 0.4s forwards;
           animation: fadeinLoad 1s 0.4s forwards;
   opacity: 0;
-  /* opacity: 50%; */
-  box-shadow: -1px -1px 9px 1px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: -1px -1px 9px 1px rgba(0, 0, 0, 0.5);
   box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   -webkit-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   -moz-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
@@ -787,8 +1044,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card .card-image {
   height: 140px;
   width: 140px;
-  /* margin-top: 10px;  */
-  /* border-radius-top-left: 5px; */
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
   cursor: pointer;
@@ -801,20 +1056,18 @@ h1, h2, h3, h4, h5, h5, h6, p {
   letter-spacing: 2px;
   width: 225px;
   height: 120px;
-  /* background-color: green; */
   color: rgb(27, 221, 102);
 }
 .album-card .card-title {
   height: 65px;
   width: 215px;
-  /* background-color: red; */
   font-size: 25px;
-  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin-right: 20px;
 }
 
 .album-card:hover {

@@ -59,8 +59,8 @@ export default function HomeContainer(props){
       }
       //async function that fetchs api data based on what user typed in search box
      async function handleSearchEnter(){
-       setAlbumsInYears([]);
-       setSinglesInYears([])
+      setAlbumsInYears([]);
+      setSinglesInYears([]);
       setArtistInfo([]);
       //get request using search token 
         
@@ -173,6 +173,7 @@ export default function HomeContainer(props){
         <AlbumsContainer 
           accessToken={props.accessToken} 
           albumData={albumsInYears}
+          musicType='Album'
         /> 
         : null
         }
@@ -180,6 +181,7 @@ export default function HomeContainer(props){
         <AlbumsContainer 
           accessToken={props.accessToken} 
           albumData={singlesInYears}
+          musicType='Single'
         /> 
         : null } 
       

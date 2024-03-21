@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect, ueState } from "react";
+import Tracklist from './Tracklist.jsx'
 
 export default function AlbumModal(props){
   const [albumInfo, setAlbumInfo] = useState();
@@ -22,7 +23,10 @@ export default function AlbumModal(props){
         .then(data => setAlbumInfo({...data}))
       
       }
-      console.log(albumInfo)
+      // setTimeout(() => {
+      //     console.log(albumInfo?.tracks)
+      // }, 300);
+    
 
         function handleOffClick(){
           setTimeout(()=>{
@@ -30,7 +34,7 @@ export default function AlbumModal(props){
 
           },5000)
         }
-     
+        console.log(albumInfo)
      //stops child element from firing onclick to close modal
       function handleChildElementClick(e){
         e.stopPropagation()
@@ -43,7 +47,11 @@ export default function AlbumModal(props){
               <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
               <div className="album-modal-title">{albumInfo?.name}</div>
            </div>
-           <div className="album-modal-bottom"></div>
+           <div className="album-modal-bottom">
+            <Tracklist
+              tracks={albumInfo?.tracks?.items}
+            />
+           </div>
           </div>
         </div>
     
