@@ -18,6 +18,8 @@
                 align-items: center;
                 justify-content: space-between;
                 margin-left: 5px;
+                // background-color: pink;
+                height: 26px;
                 .material-symbols-outlined{
                     font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
                     // line-height: 50px;
@@ -25,42 +27,64 @@
                     position: relative;
                      top: 3px;
                      margin-right: 6px;
-                    //  overflow-x: scroll;
+                   
                     }
                     .track-name{
                         // background-color: orange;
-                        width: 88%;
-                        height: 20px;
+                        width: 80%;
+                        // width: 200px;
+                        // height: 23px;
+                        position: relative;
                         // overflow-x: scroll;
                         scrollbar-width: none;
                         white-space: nowrap;
+                         overflow-x: hidden;
+                         overflow-y: visible;
                         text-overflow:ellipsis;
-                        animation: marquee 30s linear infinite;
+                        // animation: marquee 30s linear infinite;
                         color: structure.$text;
+                        // z-index: 99;
+                        margin-right: 160px;
+                        
                         & a{
                             text-decoration: none;
                             color: structure.$text;
+                            white-space: nowrap;
+                        text-overflow:ellipsis;
+                        width: 30%;
+
                         }
                     }
-                    .track-name:hover{
-                        
+                    .track-number{
+                        margin-right: 25px;
+                        color: rgb(14, 134, 50);
+                        margin-left: 7px;
+                        // margin-top: 15px;
+                        position: relative;
+                        top: 12px;
+                        // margin-bottom: 5px;
+                        //  z-index: 80;
+                        overflow:visible;
+                        height: 30px;
+                        width: 12px;
+                        // background-color: red;
                     }
 
                     .track-length{
                         margin-right: 10px;
                         color: structure.$text;
-
+                      
                     }
             }
-           
+           .track-artist-container{
+            margin-left: 55px;
+           }
             .track-artist a{
                 
-                // margin-left: 10px;
                 text-decoration: none;
-                font-size: 12px;
-                color: rgb(182, 175, 175);
-                // word-spacing: ;
-                // gap: 10px;
+                font-size: 0.8em;
+                color: rgb(160, 159, 159);
+             
 
                 
             }
@@ -72,11 +96,15 @@
         }
     }
 
-    @keyframes marquee {
-        0% {
-            left: 100%;
-          }
-          100% {
-            left: -100%
-          }
-      }
+    @media (min-width: 1380px) {
+        // .track-artist a{
+                
+        //     text-decoration: none;
+        //     font-size: 14px;
+        //     color: rgb(160, 159, 159);
+         
+
+            
+        // }
+
+    }

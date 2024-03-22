@@ -42,16 +42,23 @@ export default function AlbumModal(props){
      
     return(
          <div className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
-        <div  className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
-           <div className="album-modal-top">
-              <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
-              <div className="album-modal-title">{albumInfo?.name}</div>
-           </div>
-           <div className="album-modal-bottom">
-            <Tracklist
-              tracks={albumInfo?.tracks?.items}
-            />
-           </div>
+          <div  className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
+            <div className="album-modal-top">
+            <div className="album-modal-top-flex">
+                <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
+                <div className="album-modal-title">{albumInfo?.name}</div>
+            </div>
+            <div className="album-modal-middle">
+              <div className="album-modal-title"> <span id="track-number">#</span>Title</div>
+              <div className="album-modal-runtime"><i class="fa fa-clock-o"></i></div>
+            </div>
+            </div>
+            
+            <div className="album-modal-bottom">
+              <Tracklist
+                tracks={albumInfo?.tracks?.items}
+              />
+            </div>
           </div>
         </div>
     

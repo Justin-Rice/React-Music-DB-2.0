@@ -13,56 +13,91 @@
   align-items: center;
   justify-content: space-evenly;
 animation: fadeinLoad 0.2s 0.2s forwards;
- 
-}
 
 .album-modal-details{
-   z-index: 11;
-   border-radius: 8px;
-   margin-top: 10px;
-    height: 600px;
-  overflow: scroll;
-   width: 750px;
-   background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
-   animation: slide-in-top 0.4s  forwards;
-}
+  z-index: 11;
+  border-radius: 8px;
+  margin-top: 10px;
+   height: 600px;
+ overflow: scroll;
+  width: 750px;
+  background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
+  animation: slide-in-top 0.4s  forwards;
 
-.album-modal-top{
-    display: flex;
+  .album-modal-top{
+    // display: flex;
+    backdrop-filter: blur(10px);
+    padding-bottom: 12px;
     z-index: 12;
     // align-items: center;
      position: sticky;
      top: 0;
-     justify-content: space-between;
+    //  justify-content: space-between;
     //  background-color: red;
     font-family: Lex;
      font-size: 3.1em;
     //  font-size: 500%;
     // width: 100%;
-    overflow:hidden;
+    // overflow:hidden;
     text-overflow: ellipsis;
     color: structure.$text;
-    max-height: 250px;
-
+    max-height: 350px;
+ 
     letter-spacing: 2px;
     font-weight: 500;
+
+    .album-modal-top-flex{
+      display: flex;
+      justify-content: space-between;
+
+    }
   .album-modal-artwork{
       width: 250px;
       height: 250px;
   }
-
+ 
   .album-modal-title{
     width: 100%;
     // background-color: rgba(53, 51, 51, 0.2);
-    backdrop-filter: blur(8px);
     padding-left: 20px;
     text-align: left;
     max-height: 250px;
     position: relative;
     // top: 20px;
   }
+ 
+ }
 
+ .album-modal-middle{
+  // z-index: 12;
+  margin-top: 2px;
+  margin-top: none;
+font-size: 0.4em;
+  // position: sticky;
+  //    top: 10px;
+  color: structure.$text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  width: 100%;
+
+  #track-number{
+    margin-right: 20px;
+    margin-left: -8px;
+  }
+  .album-modal-title{
+    // margin-left: 10px;
+  }
+
+  .album-modal-runtime{
+margin-right: 10px;
+  }
+
+
+ }
 }
+
 
 .fade{
   animation: fadeoutLoad 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -71,4 +106,18 @@ animation: fadeinLoad 0.2s 0.2s forwards;
   animation: slide-out-top 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
 }
+ 
+}
 
+
+
+
+@media (min-width: 1380px) {
+  .album-modal{
+   .album-modal-details{
+    width: 58%;
+    height: 75%;
+    font-size: 1.3em;
+   }
+  }
+}

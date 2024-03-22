@@ -430,8 +430,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-animation: fadeinLoad 0.2s 0.2s forwards;
           animation: fadeinLoad 0.2s 0.2s forwards;
 }
-
-.album-modal-details {
+.album-modal .album-modal-details {
   z-index: 11;
   border-radius: 8px;
   margin-top: 10px;
@@ -443,50 +442,80 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-animation: slide-in-top 0.4s forwards;
           animation: slide-in-top 0.4s forwards;
 }
-
-.album-modal-top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.album-modal .album-modal-details .album-modal-top {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding-bottom: 12px;
   z-index: 12;
   position: sticky;
   top: 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-family: Lex;
   font-size: 3.1em;
-  overflow: hidden;
   text-overflow: ellipsis;
   color: rgb(27, 221, 102);
-  max-height: 250px;
+  max-height: 350px;
   letter-spacing: 2px;
   font-weight: 500;
 }
-.album-modal-top .album-modal-artwork {
+.album-modal .album-modal-details .album-modal-top .album-modal-top-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.album-modal .album-modal-details .album-modal-top .album-modal-artwork {
   width: 250px;
   height: 250px;
 }
-.album-modal-top .album-modal-title {
+.album-modal .album-modal-details .album-modal-top .album-modal-title {
   width: 100%;
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
   padding-left: 20px;
   text-align: left;
   max-height: 250px;
   position: relative;
 }
-
-.fade {
+.album-modal .album-modal-details .album-modal-middle {
+  margin-top: 2px;
+  margin-top: none;
+  font-size: 0.4em;
+  color: rgb(27, 221, 102);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30px;
+  width: 100%;
+}
+.album-modal .album-modal-details .album-modal-middle #track-number {
+  margin-right: 20px;
+  margin-left: -8px;
+}
+.album-modal .album-modal-details .album-modal-middle .album-modal-runtime {
+  margin-right: 10px;
+}
+.album-modal .fade {
   -webkit-animation: fadeoutLoad 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
           animation: fadeoutLoad 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
-
-.slide {
+.album-modal .slide {
   -webkit-animation: slide-out-top 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
           animation: slide-out-top 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
+@media (min-width: 1380px) {
+  .album-modal .album-modal-details {
+    width: 58%;
+    height: 75%;
+    font-size: 1.3em;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -595,6 +624,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-left: 5px;
+  height: 26px;
 }
 .tracklist .track .track-info .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
@@ -605,50 +635,50 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-right: 6px;
 }
 .tracklist .track .track-info .track-name {
-  width: 88%;
-  height: 20px;
+  width: 80%;
+  position: relative;
   scrollbar-width: none;
   white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: visible;
   text-overflow: ellipsis;
-  -webkit-animation: marquee 30s linear infinite;
-          animation: marquee 30s linear infinite;
   color: rgb(27, 221, 102);
+  margin-right: 160px;
 }
 .tracklist .track .track-info .track-name a {
   text-decoration: none;
   color: rgb(27, 221, 102);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 30%;
+}
+.tracklist .track .track-info .track-number {
+  margin-right: 25px;
+  color: rgb(14, 134, 50);
+  margin-left: 7px;
+  position: relative;
+  top: 12px;
+  overflow: visible;
+  height: 30px;
+  width: 12px;
 }
 .tracklist .track .track-info .track-length {
   margin-right: 10px;
   color: rgb(27, 221, 102);
 }
+.tracklist .track .track-artist-container {
+  margin-left: 55px;
+}
 .tracklist .track .track-artist a {
   text-decoration: none;
-  font-size: 12px;
-  color: rgb(182, 175, 175);
+  font-size: 0.8em;
+  color: rgb(160, 159, 159);
 }
 .tracklist .track .comma {
   margin-left: 1px;
   color: white;
 }
 
-@-webkit-keyframes marquee {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -100%;
-  }
-}
 * {
   margin: 0;
   padding: 0;

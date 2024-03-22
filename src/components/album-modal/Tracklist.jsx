@@ -1,10 +1,11 @@
 import "./Tracklist.scss"
 
 export default function Tracklist(props){
-const {tracks} = props
-let output = []
-    console.log(tracks)
-    //converst ms to minutes and seconds
+const {tracks} = props;
+let output = [];
+    console.log(tracks);
+
+    //converts ms to minutes and seconds
     function msConverter(ms){
         var mins = Math.floor(ms / 60000);
         var seconds = ((ms % 60000) / 1000).toFixed(0);
@@ -16,6 +17,7 @@ let output = []
           );
 
     }
+    // cleans artist data to grab artist name and link to spotify page
     function artistCleaner(artists){
          output = []
         
@@ -33,6 +35,7 @@ let output = []
 
         return output
     }
+
 return (
     <div className="tracklist">
         {
@@ -48,31 +51,39 @@ return (
             console.log(track.external_urls.spotify)
 
            return <div key={index} className="track">
-                        <div className="track-info">
-                          
-                            <div className="track-name">    {explicit &&  <span class="material-symbols-outlined">explicit</span>} <a target='_blank'href={track.external_urls.spotify}>{name}</a> </div>
-                            <div className="track-length">{trackLength} </div>
-                          
+                    <div className="track-info"> 
+                    <span className="track-number">{index + 1}.</span> 
+                        <div className="track-name">   
+                            {explicit &&  
+                            <span className="material-symbols-outlined">explicit</span>
+                            } <a target='_blank'href={track.external_urls.spotify}>
+                              {name}
+                             </a> 
                         </div>
-                        {featured.map((artist, index)=>{
-                            console.log(artist)
-                            return (
-                            <span className="track-artist"> 
-                           
-                                <a key={index} target="_blank" href={artist.link}>
-                                    {artist.name}
-                                </a> 
-                            {(featured.length > 1) && (index != featured.length - 1 )? <span className="comma">,</span> : ''}
-                            </span>
-                            )
-                        })}
+                        <div className="track-length">
+                            {trackLength}
+                         </div>
+                    </div>
+                    <div className="track-artist-container">
+                    {featured.map((artist, index)=>{
+                        console.log(artist)
+
+                        return (
+                        <span className="track-artist"> 
+                            <a key={index} target="_blank" href={artist.link}>
+                                {artist.name += (featured.length > 1) && (index != featured.length - 1 )? ", " :  '' }
+                            </a> 
+                        </span>
+                        )
+                    })}
+                    </div>
                   </div>
             // track number 
             // console.log(index +1)
-            console.log(track)
+            // console.log(track)
 
         })
-    }
+        }
     </div>
 )
 
