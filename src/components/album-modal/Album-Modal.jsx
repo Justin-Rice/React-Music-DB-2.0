@@ -49,8 +49,8 @@ export default function AlbumModal(props){
                 <div className="album-modal-title">{albumInfo?.name}</div>
             </div>
             <div className="album-modal-middle">
-              <div className="album-modal-title"> <span id="track-number">#</span>Title</div>
-              <div className="album-modal-runtime"><i class="fa fa-clock-o"></i></div>
+              <div className="album-modal-track-title"> <span id="track-number">#</span>Title</div>
+              <div className="album-modal-runtime"><i className="fa fa-clock-o"></i></div>
             </div>
             </div>
             

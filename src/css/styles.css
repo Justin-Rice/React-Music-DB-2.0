@@ -441,6 +441,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
   -webkit-animation: slide-in-top 0.4s forwards;
           animation: slide-in-top 0.4s forwards;
+  padding-right: 0px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
 }
 .album-modal .album-modal-details .album-modal-top {
   -webkit-backdrop-filter: blur(10px);
@@ -466,8 +470,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
           justify-content: space-between;
 }
 .album-modal .album-modal-details .album-modal-top .album-modal-artwork {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 }
 .album-modal .album-modal-details .album-modal-top .album-modal-title {
   width: 100%;
@@ -475,6 +479,20 @@ h1, h2, h3, h4, h5, h5, h6, p {
   text-align: left;
   max-height: 250px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: Alata;
+  font-weight: 600;
+}
+.album-modal .album-modal-details .album-modal-top .album-modal-track-title {
+  padding-left: 20px;
 }
 .album-modal .album-modal-details .album-modal-middle {
   margin-top: 2px;
@@ -492,9 +510,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
           justify-content: space-between;
   height: 30px;
   width: 100%;
+  margin-top: 10px;
 }
 .album-modal .album-modal-details .album-modal-middle #track-number {
-  margin-right: 20px;
+  margin-right: 40px;
   margin-left: -8px;
 }
 .album-modal .album-modal-details .album-modal-middle .album-modal-runtime {
@@ -513,7 +532,33 @@ h1, h2, h3, h4, h5, h5, h6, p {
   .album-modal .album-modal-details {
     width: 58%;
     height: 75%;
-    font-size: 1.3em;
+    font-size: 1.1em;
+  }
+}
+@media (max-width: 800px) {
+  .album-modal .album-modal-details {
+    width: 350px;
+    height: 75%;
+    background-color: red;
+  }
+  .album-modal .album-modal-details .album-modal-top-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .album-modal .album-modal-details .album-modal-top-flex .album-modal-artwork {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .album-modal .album-modal-details .album-modal-top-flex .album-modal-title {
+    margin-top: 5px;
+    font-size: 0.4em;
+    width: 85%;
+    text-align: center;
+    margin-left: 14px;
   }
 }
 * {
@@ -629,6 +674,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .tracklist .track .track-info .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
   color: rgb(27, 221, 102);
+  color: red;
   font-size: 18px;
   position: relative;
   top: 3px;
@@ -644,13 +690,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
   text-overflow: ellipsis;
   color: rgb(27, 221, 102);
   margin-right: 160px;
+  letter-spacing: 0.8px;
 }
 .tracklist .track .track-info .track-name a {
   text-decoration: none;
   color: rgb(27, 221, 102);
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 30%;
 }
 .tracklist .track .track-info .track-number {
   margin-right: 25px;
@@ -665,20 +711,62 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .tracklist .track .track-info .track-length {
   margin-right: 10px;
   color: rgb(27, 221, 102);
+  font-size: 0.7em;
+  margin-top: 25px;
+  font-family: Alata;
 }
 .tracklist .track .track-artist-container {
   margin-left: 55px;
 }
 .tracklist .track .track-artist a {
   text-decoration: none;
-  font-size: 0.8em;
-  color: rgb(160, 159, 159);
+  font-size: 0.7em;
+  color: rgb(197, 192, 184);
+  font-family: Alata;
+  letter-spacing: 0.4px;
+  font-weight: 100;
 }
 .tracklist .track .comma {
   margin-left: 1px;
   color: white;
 }
 
+@media (max-width: 800px) {
+  .tracklist .track {
+    margin-top: 1px;
+    margin-top: 1px;
+    overflow-x: scroll;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .tracklist .track .track-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: 5px;
+    height: 26px;
+  }
+  .tracklist .track .track-info .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
+    color: rgb(27, 221, 102);
+    color: red;
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+  }
+  .tracklist .track .track-info .track-name {
+    margin-right: 20px;
+    letter-spacing: 0.4px;
+    font-size: 0.8em;
+  }
+}
 * {
   margin: 0;
   padding: 0;

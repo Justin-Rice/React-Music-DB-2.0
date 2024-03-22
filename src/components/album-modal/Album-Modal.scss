@@ -23,7 +23,12 @@ animation: fadeinLoad 0.2s 0.2s forwards;
   width: 750px;
   background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
   animation: slide-in-top 0.4s  forwards;
-
+  padding-right: 0px;
+ 
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+ scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+  
   .album-modal-top{
     // display: flex;
     backdrop-filter: blur(10px);
@@ -52,20 +57,29 @@ animation: fadeinLoad 0.2s 0.2s forwards;
 
     }
   .album-modal-artwork{
-      width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 300px;
   }
  
   .album-modal-title{
     width: 100%;
-    // background-color: rgba(53, 51, 51, 0.2);
+    //  background-color: rgba(53, 51, 51, 0.2);
     padding-left: 20px;
     text-align: left;
     max-height: 250px;
     position: relative;
     // top: 20px;
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Alata;
+    font-weight: 600;
   }
- 
+ .album-modal-track-title{
+  padding-left: 20px;
+
+ }
  }
 
  .album-modal-middle{
@@ -81,13 +95,14 @@ font-size: 0.4em;
   justify-content: space-between;
   height: 30px;
   width: 100%;
+  margin-top: 10px;
 
   #track-number{
-    margin-right: 20px;
+    margin-right: 40px;
     margin-left: -8px;
   }
   .album-modal-title{
-    // margin-left: 10px;
+    //  margin-left: 10px;
   }
 
   .album-modal-runtime{
@@ -117,7 +132,43 @@ margin-right: 10px;
    .album-modal-details{
     width: 58%;
     height: 75%;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    // background-color: red;
+
    }
   }
+}
+
+@media (max-width: 800px) {
+  .album-modal{
+    // background-color: pink;
+    .album-modal-details{
+     width: 350px;
+     height: 75%;
+    //  font-size: 1.3em;
+    background-color: red;
+    
+    .album-modal-top-flex{
+      flex-direction: column;
+
+      .album-modal-artwork{
+        width: 200px;
+        height:200px;
+        margin: 0 auto;
+         margin-top: 20px
+      }
+
+      .album-modal-title{
+        margin-top: 5px;
+        font-size: 0.4em;
+        width: 85%;
+        text-align: center;
+        margin-left: 14px;
+      }
+    }
+  }
+    
+   }
+
+   
 }

@@ -4,9 +4,9 @@
 
 
     .tracklist{
-
+        // scrollbar-width: 0px;
         .track{
-            // background-color: palegoldenrod;
+            //  background-color: palegoldenrod;
             margin-top: 1px;
             margin-top: 1px;
             overflow-x: scroll;
@@ -18,10 +18,11 @@
                 align-items: center;
                 justify-content: space-between;
                 margin-left: 5px;
-                // background-color: pink;
+                //  background-color: pink;
                 height: 26px;
                 .material-symbols-outlined{
                     font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
+                    color: red;
                     // line-height: 50px;
                     font-size:18px;
                     position: relative;
@@ -30,7 +31,7 @@
                    
                     }
                     .track-name{
-                        // background-color: orange;
+                        //  background-color: orange;
                         width: 80%;
                         // width: 200px;
                         // height: 23px;
@@ -45,13 +46,14 @@
                         color: structure.$text;
                         // z-index: 99;
                         margin-right: 160px;
+                        letter-spacing: 0.8px;
                         
                         & a{
                             text-decoration: none;
                             color: structure.$text;
                             white-space: nowrap;
                         text-overflow:ellipsis;
-                        width: 30%;
+                        // width: 30%;
 
                         }
                     }
@@ -65,6 +67,7 @@
                         // margin-bottom: 5px;
                         //  z-index: 80;
                         overflow:visible;
+                        
                         height: 30px;
                         width: 12px;
                         // background-color: red;
@@ -73,18 +76,24 @@
                     .track-length{
                         margin-right: 10px;
                         color: structure.$text;
-                      
+                        font-size: .7em;
+                        margin-top: 25px;
+                        font-family: Alata;
+
                     }
             }
            .track-artist-container{
             margin-left: 55px;
            }
             .track-artist a{
-                
+
                 text-decoration: none;
-                font-size: 0.8em;
-                color: rgb(160, 159, 159);
-             
+                font-size: 0.7em;
+                color: structure.$text-2;
+                font-family: Alata;
+                letter-spacing: 0.4px;
+                font-weight: 100;
+
 
                 
             }
@@ -106,5 +115,50 @@
 
             
         // }
+
+    }
+
+    @media (max-width: 800px) {
+        .tracklist{
+        .track{
+            //  background-color: palegoldenrod;
+            margin-top: 1px;
+            margin-top: 1px;
+            overflow-x: scroll;
+            // border: solid structure.$text 1px;
+             border-radius: 2px;
+            background-color:rgb(0,0,0,0.1);
+            .track-info{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-left: 5px;
+                //  background-color: pink;
+                height: 26px;
+                .material-symbols-outlined{
+                    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
+                    color: red;
+                    // line-height: 50px;
+                    font-size:18px;
+                    position: relative;
+                     top: 3px;
+                     margin-right: 6px;
+                   
+                    }
+                    .track-name{
+                       
+                        margin-right: 20px;
+                        letter-spacing: 0.4px;
+                        font-size: .8em;
+                        
+                       
+                    }
+                    
+
+                    
+            }
+           
+        }
+    }
 
     }
