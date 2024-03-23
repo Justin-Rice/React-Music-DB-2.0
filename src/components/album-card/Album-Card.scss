@@ -31,12 +31,12 @@
     .card-content{
         font-family: Alata;
         font-weight: 600;
-        letter-spacing: 1px;
+        letter-spacing: 2.5px;
         font-size: 3.5em;
         // width: 210px;
         height: 140px;
         // color: structure.$text;
-        //  color: black;
+        //   color: black;
         // margin-right: 20px;
         margin-left: 10px;
         // background-color: pink;
@@ -50,6 +50,7 @@
         width: 225px;
         font-size: .45em;
         // overflow:hidden;
+        // color: white;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 3;

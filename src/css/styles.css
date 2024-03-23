@@ -42,41 +42,56 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @-webkit-keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @-webkit-keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -88,13 +103,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -147,25 +162,37 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -177,13 +204,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -364,25 +391,37 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -394,13 +433,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -411,6 +450,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 }
 .album-modal {
   background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(218, 218, 218);
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -426,6 +466,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-animation: fadeinLoad 0.5s forwards;
+          animation: fadeinLoad 0.5s forwards;
 }
 .album-modal .album-modal-details {
   z-index: 11;
@@ -495,6 +537,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 2px;
   margin-top: none;
   font-size: 0.4em;
+  color: rgb(218, 218, 218);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -515,14 +558,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-modal .album-modal-details .album-modal-middle .album-modal-runtime {
   margin-right: 10px;
 }
-.album-modal .fade {
+.album-modal.fade {
   -webkit-animation: fadeoutLoad 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
           animation: fadeoutLoad 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 .album-modal .slide {
-  -webkit-animation: slide-out-top 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-          animation: slide-out-top 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: slide-out-top 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: slide-out-top 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
+
 @media (min-width: 1380px) {
   .album-modal .album-modal-details {
     width: 58%;
@@ -600,25 +644,37 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -630,13 +686,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -689,6 +745,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: rgb(218, 218, 218);
+}
+.tracklist .track .track-info .track-name a:hover {
+  color: white;
 }
 .tracklist .track .track-info .track-number {
   margin-right: 25px;
@@ -711,10 +771,17 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .tracklist .track .track-artist a {
   text-decoration: none;
   font-size: 0.7em;
-  color: rgb(197, 192, 184);
+  color: black;
   font-family: Alata;
   letter-spacing: 0.4px;
   font-weight: 100;
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+.tracklist .track .track-artist a:hover {
+  text-decoration: underline;
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
 }
 .tracklist .track .comma {
   margin-left: 1px;
@@ -801,25 +868,37 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -831,13 +910,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -1082,25 +1161,37 @@ h1, h2, h3, h4, h5, h5, h6, p {
   src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
 }
 @keyframes fadeinLoad {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
-    opacity: 1;
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 @keyframes fadeoutLoad {
-  from {
-    opacity: 1;
+  0% {
+    opacity: 100%;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes slide-in-top {
   0% {
+    opacity: 0;
     -webkit-transform: translateY(-200px);
     transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
@@ -1112,13 +1203,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  100% {
+  50% {
     -webkit-transform: translateY(-1000px);
     transform: translateY(-1000px);
   }
 }
 @keyframes slide-out-top {
-  0% {
+  10% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -1163,7 +1254,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card .card-content {
   font-family: Alata;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2.5px;
   font-size: 3.5em;
   height: 140px;
   margin-left: 10px;

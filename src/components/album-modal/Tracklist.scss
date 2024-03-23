@@ -54,7 +54,12 @@
                             white-space: nowrap;
                         text-overflow:ellipsis;
                         // width: 30%;
+                        color: structure.$text-2;
 
+                        }
+                        & a:hover{
+                            color: white;
+                            // transition: 0.9s;
                         }
                     }
                     .track-number{
@@ -87,15 +92,21 @@
            }
             .track-artist a{
 
-                text-decoration: none;
+                 text-decoration: none;
                 font-size: 0.7em;
-                color: structure.$text-2;
+                color: black;
                 font-family: Alata;
                 letter-spacing: 0.4px;
                 font-weight: 100;
                 // background-color: none;
 
-                
+                transition: 0.9s;
+
+            }
+            .track-artist a:hover{
+                text-decoration: underline;
+                transition: 0.9s;
+
             }
 
             .comma{

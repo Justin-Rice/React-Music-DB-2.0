@@ -26,12 +26,13 @@ let mainColor = tinycolor(imgColors?.[1])
  .lighten()
  
  
- let textColor = tinycolor(imgColors?.[0]).complement().darken(60).setAlpha(0.8).desaturate(20)
+ let textColor = '#FFF'
+//  tinycolor(imgColors?.[0]).complement().darken(60).setAlpha(0.8).desaturate(20)
 //  .darken(80)  
 //  .desaturate(0);
 
 const bgGradientStyle = {
-    background: `linear-gradient(${mainColor}, ${secondaryColor})`
+    background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`
 
 }
 
@@ -63,7 +64,7 @@ const textGradientStyle = {
          setClicked(!clicked)
         
 
-        },450)
+        },650)
     }
     }
     return (
@@ -76,7 +77,7 @@ const textGradientStyle = {
                 setClicked={setClicked} 
                 clicked={clicked}
                 isTrue={isTrue}
-                colors={{mainColor, secondaryColor, textColor, bgGradientStyle, textGradientStyle}}
+                colors={{mainColor, secondaryColor}}
             />
             }
             <div className='album-card' albumid={props.albumData.id}  >

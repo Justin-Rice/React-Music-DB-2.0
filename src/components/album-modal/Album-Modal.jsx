@@ -9,20 +9,24 @@ export default function AlbumModal(props){
 
   let modalMainColor = tinycolor(colors?.mainColor)
   .setAlpha(1)
-  .darken(10)
-  .brighten(5)  
-  .saturate()
+  .darken(40)
+  .brighten()  
+  .saturate(10)
   let modalSecondaryColor = tinycolor(colors?.secondaryColor)
   .setAlpha(1)
   .darken(10) 
-  .saturate(15)
+  .saturate(25)
   .lighten()
   
   const darkerGradientStyle = {
-    background: `linear-gradient(${modalMainColor}, ${modalSecondaryColor})`,
-    color: colors.textColor,
+    background: `linear-gradient(${modalMainColor + 'B3'}, ${modalSecondaryColor + 'B3'})`,
+    
 }
-   console.log(colors.textColor)
+
+const opaque = {
+  background: `linear-gradient(${modalMainColor + 'FF'}, ${modalSecondaryColor + 'FF'})`,
+}
+   console.log(colors.bgGradientStyle)
     let searchParams = {
         method: 'GET',
         headers: {
@@ -54,7 +58,7 @@ export default function AlbumModal(props){
      
     return(
          <div style={darkerGradientStyle} className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
-          <div style={darkerGradientStyle} className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
+          <div style={opaque} className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
             <div className="album-modal-top">
             <div className="album-modal-top-flex">
                 <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
