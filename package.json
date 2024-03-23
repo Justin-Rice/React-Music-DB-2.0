@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-color-extractor": "^1.1.2",
     "react-dom": "^18.2.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

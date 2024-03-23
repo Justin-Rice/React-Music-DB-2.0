@@ -13,7 +13,6 @@ export default function AlbumModal(props){
         }
       }
 
-      // console.log(props)
     useEffect(()=>{preloadAlbum(props.albumID)},[])
 
     async function preloadAlbum(albumID){
@@ -21,12 +20,7 @@ export default function AlbumModal(props){
         await fetch('https://api.spotify.com/v1/albums/'+albumID, searchParams)
         .then(response=> response.json())
         .then(data => setAlbumInfo({...data}))
-      
       }
-      // setTimeout(() => {
-      //     console.log(albumInfo?.tracks)
-      // }, 300);
-    
 
         function handleOffClick(){
           setTimeout(()=>{
