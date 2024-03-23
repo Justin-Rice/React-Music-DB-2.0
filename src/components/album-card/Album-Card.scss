@@ -4,7 +4,7 @@
     // z-index: 2;
   
     height: 140px;
-    width: 350px;
+    width: 400px;
     // background-color: rgb(77, 74, 110);
     // background-color: rgb(54, 47, 73);
     // background-color: structure.$secondary;
@@ -29,21 +29,25 @@
         z-index: 10;
     }
     .card-content{
-        font-family: Lex;
-        font-weight: 400;
+        font-family: Alata;
+        font-weight: 600;
         letter-spacing: 1px;
-        font-size: 3em;
+        font-size: 3.5em;
         // width: 210px;
         height: 140px;
-        color: structure.$text;
+        // color: structure.$text;
+        //  color: black;
         // margin-right: 20px;
         margin-left: 10px;
         // background-color: pink;
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
     .card-title{
-        height: 125px;
-        width: 195px;
+        line-height: 30px;
+        height: 136px;
+        width: 225px;
         font-size: .45em;
         // overflow:hidden;
         text-overflow: ellipsis;
@@ -70,3 +74,12 @@
 
 
 
+@media (min-width: 1380px) {
+
+
+}
+
+@media (max-width: 800px) {
+
+
+}

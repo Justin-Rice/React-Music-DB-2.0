@@ -14,28 +14,46 @@ export default function AlbumCard(props){
     // if value is true add fade class ot element which causes fade animation to play
     const [isTrue, setIsTrue] = useState(true)
     // console.log(props)
-    function hexToRgb(hex) {
-        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16),
-          a: 0.5
-        } : null;
-      }
-    //   let originColor = tinycolor(imgColors?.[0]);
-    //   console.log(originColor)
-    //   let darkerColor = originColor.brighten(25).toString;
-    //   console.log(tinycolor(imgColors?.[0]).darken(10))
-//    console.log(albumStyle.backgroundColor)
+   
+let mainColor = tinycolor(imgColors?.[1])
+ .setAlpha(1)
+ .darken(25)
+ .brighten(5)  
+ .saturate(5)
+ let secondaryColor = tinycolor(imgColors?.[1])
+ .setAlpha(1)
+ .darken(10) 
+ .lighten()
+ 
+ 
+ let textColor = tinycolor(imgColors?.[0]).complement().darken(60).setAlpha(0.8).desaturate(20)
+//  .darken(80)  
+//  .desaturate(0);
+
+const bgGradientStyle = {
+    background: `linear-gradient(${mainColor}, ${secondaryColor})`
+
+}
+
+const textGradientStyle = {
+    color: textColor,
+    // 'text-decoration': "underline " + secondaryColor.darken(45) + " 3px"
+
+}
+
 
     function handleAlbumClick(){
         //if true instantly change both values
         if(isTrue){
-             setClicked(!clicked)
             setIsTrue(!isTrue)
+
+          
+                setClicked(!clicked)
+               
+       
+        
             document.body.style.overflow = "hidden"  
-            // document.body.style.backdropFilter = 'blur(10px)'
+           
               }else{
         //else add fade class then change clicked value after 400ms animation plays
         setIsTrue(!isTrue)
@@ -49,13 +67,8 @@ export default function AlbumCard(props){
     }
     }
     return (
-        <div onClick={handleAlbumClick} style={{   
-            // TODO: add linear gradietns with combo of two image color values  
-            backgroundColor: tinycolor(imgColors?.[0])
-            .setAlpha(0.7)
-            .darken(10)  
-            .desaturate(40)
-        }}>
+      
+        <div onClick={handleAlbumClick} style={bgGradientStyle}>
             {clicked && 
             <AlbumModal 
                 albumID={props.albumData.id} 
@@ -63,6 +76,7 @@ export default function AlbumCard(props){
                 setClicked={setClicked} 
                 clicked={clicked}
                 isTrue={isTrue}
+                colors={{mainColor, secondaryColor, textColor, bgGradientStyle, textGradientStyle}}
             />
             }
             <div className='album-card' albumid={props.albumData.id}  >
@@ -70,7 +84,7 @@ export default function AlbumCard(props){
                 <img className='card-image'src={props.albumData.images[1].url} alt="" />
             </ColorExtractor>
                 <div className="card-content">
-                    <div className="card-title">{name}</div>
+                    <div className="card-title" style={textGradientStyle}>{name}</div>
                     <div className="card-release-date"></div>
                     <div className="card-rating"></div>
                 </div>

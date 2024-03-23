@@ -3,8 +3,8 @@ import "./Tracklist.scss"
 export default function Tracklist(props){
 const {tracks} = props;
 let output = [];
-    console.log(tracks);
-
+    // console.log(tracks);
+    console.log(props.gradient)
     //converts ms to minutes and seconds
     function msConverter(ms){
         var mins = Math.floor(ms / 60000);
@@ -45,10 +45,10 @@ return (
             const explicit = track.explicit;
             const featured  = artistCleaner(track?.artists)
             const trackLength = msConverter(track.duration_ms);
-            console.log(trackLength)
-            console.log(track.artists)
-            console.log(featured)
-            console.log(track.external_urls.spotify)
+            // console.log(trackLength)
+            // console.log(track.artists)
+            // console.log(featured)
+            // console.log(track.external_urls.spotify)
 
            return <div key={index} className="track">
                     <div className="track-info"> 
@@ -66,7 +66,7 @@ return (
                     </div>
                     <div className="track-artist-container">
                     {featured.map((artist, index)=>{
-                        console.log(artist)
+                        // console.log(artist)
 
                         return (
                         <span className="track-artist"> 

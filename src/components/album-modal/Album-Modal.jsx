@@ -1,10 +1,28 @@
 import React, { useState } from "react";
 import { useEffect, ueState } from "react";
 import Tracklist from './Tracklist.jsx'
+import tinycolor from "https://esm.sh/tinycolor2";
 
 export default function AlbumModal(props){
   const [albumInfo, setAlbumInfo] = useState();
+  const {colors} = props;
 
+  let modalMainColor = tinycolor(colors?.mainColor)
+  .setAlpha(1)
+  .darken(10)
+  .brighten(5)  
+  .saturate()
+  let modalSecondaryColor = tinycolor(colors?.secondaryColor)
+  .setAlpha(1)
+  .darken(10) 
+  .saturate(15)
+  .lighten()
+  
+  const darkerGradientStyle = {
+    background: `linear-gradient(${modalMainColor}, ${modalSecondaryColor})`,
+    color: colors.textColor,
+}
+   console.log(colors.textColor)
     let searchParams = {
         method: 'GET',
         headers: {
@@ -35,8 +53,8 @@ export default function AlbumModal(props){
      }
      
     return(
-         <div className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
-          <div  className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
+         <div style={darkerGradientStyle} className={`album-modal ${props.isTrue ? 'fade' : 'hidden'}`}  onClick={()=>{handleOffClick}}>
+          <div style={darkerGradientStyle} className={`album-modal-details ${props.isTrue ? 'slide' : 'hidden'}`} onClick={handleChildElementClick}>
             <div className="album-modal-top">
             <div className="album-modal-top-flex">
                 <img src={albumInfo?.images?.[0]?.url} alt="" className="album-modal-artwork" />
@@ -50,6 +68,7 @@ export default function AlbumModal(props){
             
             <div className="album-modal-bottom">
               <Tracklist
+              gradient={darkerGradientStyle}
                 tracks={albumInfo?.tracks?.items}
               />
             </div>
