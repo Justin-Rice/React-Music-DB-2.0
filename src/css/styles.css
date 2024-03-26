@@ -7,8 +7,7 @@
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,8 +126,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -223,7 +221,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  top: 20px;
+  top: 5px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -232,12 +230,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
           align-items: center;
   width: 100%;
   position: sticky;
-  z-index: 3;
+  z-index: 1;
 }
 .navbar .nav-title {
   font-family: Lex;
   position: sticky;
-  left: 40px;
+  cursor: pointer;
+  left: 8px;
   font-size: 30px;
   font-weight: 600;
   -webkit-box-orient: horizontal;
@@ -249,11 +248,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 .search-bar {
   position: sticky;
-  background-color: rgba(0, 0, 0, 0.2);
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(36, 15, 144, 0.2)), to(rgba(47, 11, 79, 0.2)));
   background: linear-gradient(90deg, rgba(36, 15, 144, 0.2) 20%, rgba(47, 11, 79, 0.2) 100%);
   top: 20px;
-  height: 60px;
+  height: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,11 +263,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
           justify-content: center;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.3);
   width: 60px;
+  z-index: 1;
   margin: 0 auto;
-  margin-left: 60px;
+  margin-left: 20px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-left: 10px;
@@ -356,8 +353,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -452,9 +448,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
   background-color: rgba(0, 0, 0, 0.2);
   color: rgb(218, 218, 218);
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  z-index: 10;
+  z-index: 99;
   top: 0;
   left: 0;
   display: -webkit-box;
@@ -474,8 +470,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
   border-radius: 8px;
   margin-top: 10px;
   max-height: 650px;
+  min-height: 450px;
   overflow: scroll;
-  width: 750px;
+  width: 600px;
   -webkit-animation: slide-in-top 0.6s forwards;
           animation: slide-in-top 0.6s forwards;
   padding-right: 0px;
@@ -492,10 +489,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
   position: sticky;
   top: 0;
   font-family: Lex;
-  font-size: 3.1em;
+  font-size: 2.6em;
+  overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.29);
+  border-radius: 0px;
   max-height: 350px;
   letter-spacing: 2px;
   font-weight: 500;
@@ -509,8 +509,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
           justify-content: space-between;
 }
 .album-modal .album-modal-details .album-modal-top .album-modal-artwork {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 12px;
 }
 .album-modal .album-modal-details .album-modal-top .album-modal-title {
   width: 100%;
@@ -521,12 +525,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 20px;
   font-family: Alata;
   font-weight: 600;
 }
@@ -569,16 +571,17 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 @media (min-width: 1380px) {
   .album-modal .album-modal-details {
-    width: 58%;
-    height: 75%;
+    width: 45%;
+    max-height: 75%;
+    min-height: 500px;
     font-size: 1.1em;
   }
 }
 @media (max-width: 800px) {
   .album-modal .album-modal-details {
     width: 350px;
-    height: 75%;
-    background-color: red;
+    min-height: 380px;
+    max-height: 75%;
   }
   .album-modal .album-modal-details .album-modal-top-flex {
     -webkit-box-orient: vertical;
@@ -609,8 +612,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -706,7 +708,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 1px;
   overflow-x: scroll;
   border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .tracklist .track .track-info {
   display: -webkit-box;
@@ -719,13 +721,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-left: 5px;
-  height: 26px;
+  height: 25px;
 }
 .tracklist .track .track-info .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
   color: rgb(27, 221, 102);
   color: red;
-  font-size: 18px;
+  font-size: 19px;
   position: relative;
   top: 3px;
   margin-right: 6px;
@@ -733,13 +735,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .tracklist .track .track-info .track-name {
   width: 80%;
   position: relative;
-  scrollbar-width: none;
   white-space: nowrap;
   overflow-x: hidden;
-  overflow-y: visible;
   text-overflow: ellipsis;
   margin-right: 160px;
   letter-spacing: 0.8px;
+  height: 25px;
 }
 .tracklist .track .track-info .track-name a {
   text-decoration: none;
@@ -775,13 +776,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: Alata;
   letter-spacing: 0.4px;
   font-weight: 100;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 .tracklist .track .track-artist a:hover {
   text-decoration: underline;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 .tracklist .track .comma {
   margin-left: 1px;
@@ -794,7 +795,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
     margin-top: 1px;
     overflow-x: scroll;
     border-radius: 2px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
   }
   .tracklist .track .track-info {
     display: -webkit-box;
@@ -833,8 +834,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -957,8 +957,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
 }
 
 .artist-banner {
-  margin: 40px auto;
-  border-radius: 10px;
+  margin: 0px auto;
+  position: relative;
+  top: -90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -969,6 +970,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 80px;
 }
 .artist-banner .artist-name {
   margin-top: -15px;
@@ -994,7 +996,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
           flex-direction: column;
 }
 .artist-banner .artist-info .artist-image {
-  height: 370px;
+  width: 500px;
   margin: 0 auto;
   z-index: 2;
   -webkit-transition: 0.7s;
@@ -1126,8 +1128,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: rgb(36, 15, 144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgb(47, 11, 79) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -1219,6 +1220,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
 }
 .album-card {
+  z-index: -99;
   height: 140px;
   width: 400px;
   -webkit-backdrop-filter: blur(15px);
@@ -1270,9 +1272,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
 }
 .album-card .card-title {
   line-height: 30px;
-  height: 136px;
+  height: 122px;
   width: 225px;
   font-size: 0.45em;
+  overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1283,4 +1286,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .nav-title {
+    display: none;
+  }
 }

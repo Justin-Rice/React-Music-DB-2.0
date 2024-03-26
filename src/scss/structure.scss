@@ -14,8 +14,9 @@
   }
   html, body {
   height: 100%;
-  background: rgb(36,15,144);
-  background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgba(47,11,79,1) 100%);
+  // background: rgb(36,15,144);
+  // background: radial-gradient(circle, rgb(26, 10, 104) 0%, rgba(47,11,79,1) 100%);
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

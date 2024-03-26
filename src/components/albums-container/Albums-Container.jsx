@@ -15,8 +15,6 @@ export default function AlbumsContainer(props){
               yearGroup = (<div key={year}>
                 <span className="album-year" >{year}</span> 
              <div className="album-years-container" > 
-             {/* {year} */}
-                {/* <span className="album-year" >{year}</span> */}
                 {albums.map((album, key)=> {
                 return ( 
                     <div className="outer" key={key}>

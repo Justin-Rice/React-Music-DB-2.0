@@ -12,41 +12,42 @@
             overflow-x: scroll;
             // border: solid structure.$text 1px;
              border-radius: 2px;
-            background-color:rgb(0,0,0,0.1);
+            background-color:rgb(0,0,0,0.2);
             .track-info{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-left: 5px;
                 //  background-color: pink;
-                height: 26px;
+                height: 25px;
                 .material-symbols-outlined{
                     font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
                     color: red;
                     // line-height: 50px;
-                    font-size:18px;
+                    font-size:19px;
                     position: relative;
                      top: 3px;
                      margin-right: 6px;
                    
                     }
                     .track-name{
-                        //  background-color: orange;
+                        //   background-color: orange;
                         width: 80%;
                         // width: 200px;
                         // height: 23px;
                         position: relative;
                         // overflow-x: scroll;
-                        scrollbar-width: none;
+                        // scrollbar-width: none;
                         white-space: nowrap;
                          overflow-x: hidden;
-                         overflow-y: visible;
+                        //  overflow-y: visible;
                         text-overflow:ellipsis;
                         // animation: marquee 30s linear infinite;
                         // color: structure.$text;
                         // z-index: 99;
                         margin-right: 160px;
                         letter-spacing: 0.8px;
+                        height: 25px;
                         
                         & a{
                             text-decoration: none;
@@ -100,12 +101,12 @@
                 font-weight: 100;
                 // background-color: none;
 
-                transition: 0.9s;
+                transition: 0.2s;
 
             }
             .track-artist a:hover{
                 text-decoration: underline;
-                transition: 0.9s;
+                transition: 0.2s;
 
             }
 
@@ -117,15 +118,7 @@
     }
 
     @media (min-width: 1380px) {
-        // .track-artist a{
-                
-        //     text-decoration: none;
-        //     font-size: 14px;
-        //     color: rgb(160, 159, 159);
-         
-
-            
-        // }
+       
 
     }
 
@@ -138,7 +131,7 @@
             overflow-x: scroll;
             // border: solid structure.$text 1px;
              border-radius: 2px;
-            background-color:rgb(0,0,0,0.1);
+            background-color:rgb(0,0,0,0.2);
             .track-info{
                 display: flex;
                 align-items: center;

@@ -5,9 +5,9 @@
   color: structure.$text-2;
 
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-   z-index: 10;
+   z-index: 99;
   top: 0;
   left: 0;
   // opacity: 40%; 
@@ -20,9 +20,12 @@
   z-index: 11;
   border-radius: 8px;
   margin-top: 10px;
+    // min-height: 200px;
    max-height: 650px;
+   min-height: 450px;
+
  overflow: scroll;
-  width: 750px;
+  width: 600px;
   // //  background: linear-gradient(180deg, rgb(53, 26, 128) 0%, rgb(44, 8, 102) 100%);
   // opacity: 80%;
   animation: slide-in-top 0.6s  forwards;
@@ -37,37 +40,35 @@
    
   
   .album-modal-top{
-    // display: flex;
     padding-bottom: 12px;
     z-index: 12;
-    // align-items: center;
-     position: sticky;
-     top: 0;
-    //  justify-content: space-between;
-      // background-color: red;
-      // background-color: rgb(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
     font-family: Lex;
-     font-size: 3.1em;
-    //  font-size: 500%;
-    // width: 100%;
-    // overflow:hidden;
+    font-size: 2.6em;
+    overflow: hidden;
     text-overflow: ellipsis;
-    // color: structure.$text;
-    backdrop-filter: blur(20px);
-
+     backdrop-filter: blur(8px);
+     background-color: rgba(0,0,0,0.29);
+    // filter:blur(20px);
+    border-radius: 0px;
     max-height: 350px;
- 
     letter-spacing: 2px;
     font-weight: 500;
-
+    // background-color: pink;
+// padding: 100px;
     .album-modal-top-flex{
       display: flex;
       justify-content: space-between;
-
     }
+
   .album-modal-artwork{
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-left: 20px;
+    border-radius: 12px;
   }
  
   .album-modal-title{
@@ -78,10 +79,11 @@
     max-height: 250px;
     position: relative;
     // top: 20px;
-    // background-color: red;
+    //  background-color: red;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    // align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
     font-family: Alata;
     font-weight: 600;
   }
@@ -139,8 +141,9 @@ margin-right: 10px;
 @media (min-width: 1380px) {
   .album-modal{
    .album-modal-details{
-    width: 58%;
-    height: 75%;
+    width: 45%;
+    max-height: 75%;
+     min-height: 500px;
     font-size: 1.1em;
     // background-color: red;
 
@@ -153,9 +156,10 @@ margin-right: 10px;
     // background-color: pink;
     .album-modal-details{
      width: 350px;
-     height: 75%;
+     min-height: 380px;
+     max-height: 75%;
     //  font-size: 1.3em;
-    background-color: red;
+    // background-color: red;
     
     .album-modal-top-flex{
       flex-direction: column;

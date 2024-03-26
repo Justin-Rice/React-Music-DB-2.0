@@ -10,7 +10,7 @@ export default function AlbumModal(props){
   let modalMainColor = tinycolor(colors?.mainColor)
   .setAlpha(1)
   .darken(40)
-  .brighten()  
+  .brighten(20)  
   .saturate(10)
   let modalSecondaryColor = tinycolor(colors?.secondaryColor)
   .setAlpha(1)

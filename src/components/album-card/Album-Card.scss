@@ -1,7 +1,7 @@
 @use '../../scss/structure.scss';
 
 .album-card{
-    // z-index: 2;
+     z-index: -99;
   
     height: 140px;
     width: 400px;
@@ -46,10 +46,10 @@
     }
     .card-title{
         line-height: 30px;
-        height: 136px;
+        height: 122px;
         width: 225px;
         font-size: .45em;
-        // overflow:hidden;
+         overflow:hidden;
         // color: white;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -80,7 +80,9 @@
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-
+.nav-title{
+    display: none;
+}
 }

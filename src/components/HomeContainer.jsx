@@ -2,6 +2,9 @@ import '../components/albums-container/Albums-Container.scss';
 import AlbumsContainer from './albums-container/Albums-Container';
 import {useState} from 'react';
 import NavBar from './navbar/NavBar';
+import { ColorExtractor } from 'react-color-extractor';
+import tinycolor from "https://esm.sh/tinycolor2";
+
 
 
 export default function HomeContainer(props){
@@ -10,6 +13,8 @@ export default function HomeContainer(props){
     const [albumsInYears, setAlbumsInYears] = useState();
     const [singlesInYears, setSinglesInYears] = useState([]);
     const [searchClass, setSearchClass] = useState('search-bar-small');
+    const [imgColors, setImgColors] = useState();    
+
     const [searchText, setSearchText] = useState('');
     let searchParams = {
         method: 'GET',
@@ -19,7 +24,24 @@ export default function HomeContainer(props){
         }
     
       }
+      console.log(imgColors)
 
+      let mainColor = tinycolor(imgColors?.[1])
+      .setAlpha(1)
+      .darken(25)
+      .brighten(5)  
+      .saturate(5)
+ let secondaryColor = tinycolor(imgColors?.[1])
+      .setAlpha(1)
+      .darken(10) 
+      .lighten()
+
+
+      const bgGradientStyle = {
+        background: `linear-gradient(${mainColor}A1, ${secondaryColor}A1)`
+    
+    }
+    
     //async function that populates page based on random artist in array  NOT ACTIVE
     async function preload(defaultArtists){
       randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
@@ -136,7 +158,7 @@ export default function HomeContainer(props){
       console.log(artistInfo)
 
     return (
-    <div className='home-container'>
+    <div className='home-container' >
       <NavBar
           onSearchEnter={handleSearchEnter} 
           searchClass={searchClass}
@@ -147,13 +169,15 @@ export default function HomeContainer(props){
       />
 
     {artistInfo !='' &&  
-     <div className="artist-banner">
+     <div className="artist-banner"style={bgGradientStyle} >
       <div className="artist-name">{artistInfo[0]}</div>  
           {/* <div className="artist-followers">{artistInfo[3]}</div> */}
           <div className="artist-info">
           { props.accessToken &&
          <a href={artistInfo[4]} target="_blank">
+          <ColorExtractor getColors={colors => setImgColors(colors)}>
             <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />
+            </ColorExtractor>
          </a>}
          <div id="genre">{artistInfo?.[2].length <=1 ? 'Genre:' : 'Genres:' }</div> 
          <div className="artist-genres">
