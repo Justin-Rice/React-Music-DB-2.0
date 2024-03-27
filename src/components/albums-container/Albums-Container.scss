@@ -25,73 +25,103 @@
 
 
 .artist-banner{
+  
   margin: 0px auto;
   position: relative;
-    top: -90px;
+    top: 20px;
+    -webkit-box-shadow: 2px 0px 31px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 0px 31px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 0px 31px 0px rgba(0,0,0,0.75);
   // border-radius: 10px; 
   display: flex;
   align-items: center;
   flex-direction: column;
-  //  background-color: red;
-  // padding: 200px;
- padding-top: 80px;
+  
+ padding-top: 2px;
+ width: 700px;
+ border-radius: 10px;
 
   .artist-name{
-    margin-top: -15px;
+    margin-top: 6px;
     position: relative;
+    width: 95%;
     top: -10px;
     margin-left: 15px;
-    color: structure.$text;
+    color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 600;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+    line-height: 60px;
+    // background-color: pink;
   }
 
   .artist-info{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-
+    // align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+        //  background-color: red;
+    //  max-width: 750px;
+    width: 100%;
+    //  padding-bottom: -20px;
     .artist-image{
-      // height: 370px;
-      width: 500px;
-      margin: 0 auto;
+       max-height: 350px;
+       max-width: 800px;
+      // margin: 0 auto;
       z-index: 2;
       transition: 0.7s;
-      margin-bottom: 15px;
-      margin-left: 15px;
-      border-radius: 5px
+      // margin-bottom: 15px;
+       margin-left: 5px;
+       margin-top: 3px;
+       margin-bottom: 3px;
+      border-radius: 10px;
+      // margin-top: 10px;
+      // background-color: red;
     }
 
     .artist-genre{
       margin-top: 6px;
-      color: structure.$text;
-      font-size: 16px;
-      background-color: rgba(27,221,102,0.25);
-      padding: 6px 5px 6px 5px;
-      border-radius: 18px;
-      box-shadow: 0px 0px 1px 1px rgba(30, 27, 221, 0.6);
-      -webkit-box-shadow: 0px 0px 2px 1px rgba(30, 27, 221, 0.6);
-      -moz-box-shadow: 0px 0px 1px 1px rgba(30, 27, 221, 0.6);
+      color: white;
+      font-weight: 600;
+      box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);  
+      border-radius: 4px;
+      background-color: rgba(36, 31, 31, 0.3);
+      padding: 3px 4px 3px 4px;
+
+     
+
     }
     
     .artist-genres{
       color: structure.$text;
-      font-size: 1em;
-      margin: 0 auto;
+      font-size: 0.5em;
+      // margin: 0 auto;
+      // width: 90%;
       width: 90%;
       display: flex;
       gap: 0px 8px;
       flex-wrap: wrap;
+      //  background-color: pink;
+      font-family: Lex;
     }
+
+    // .info{
+    //   // background-color: orange;
+    //   // align-self: ;
+    //   // width: 100%;
+    // }
     #genre{
-      align-self: center;
-      text-align: left;
-      width: 90%;
-      color: structure.$text;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      font-size: 20px;
+      color: white;
+      letter-spacing: 1.5px;
+      font-size: 1.8em;
+      font-family: Alata;
+      // font-size: 20px;
+      margin-top: 10px;
+      margin-left: 15px;
+        // background-color: green;
     }
   }
 }
@@ -176,4 +206,65 @@
         size: 80%;
     }
 
+}
+
+@media (min-width: 1380px) {
+.artist-banner{
+  width: 50%;
+  .artist-info{
+    .artist-image{
+      // max-height: 500px;
+      height: 700px;
+    }
+  }
+  
+}
+}
+@media  (max-width: 900px){
+  .artist-banner{
+    width: 365px;
+  min-width: none;
+  max-width: none;
+    width: none;
+   .artist-info{
+    flex-direction: column;
+    align-items: center;
+    .artist-image{
+      margin: none;
+      padding-right:3px ;
+    }
+    
+    .info{
+     
+      position: relative;
+      top: -10px;
+      font-size: 0.8em;
+      .artist-name{
+        // background-color: paleturquoise;
+        width: 300px;
+        font-size: 2em;
+        // margin-bottom: 2px;
+        top: -10px;
+      }
+      .artist-genre{
+        //  background-color: orange;
+      }
+      #genre{
+        position: relative;
+        top: -30px;
+        font-size: 1.5em;
+      }
+      .artist-genres{
+        // background-color: palegreen;
+        width: 300px;
+        font-size: 0.6em;
+        // margin-bottom: 20px;
+        margin-top: 0px;
+        position: relative;
+        // top: -1s0px;
+      }
+    }
+   }
+  }
+  
 }

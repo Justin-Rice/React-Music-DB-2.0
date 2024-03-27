@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  top: 5px;
+  top: 0px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -231,13 +231,14 @@ h1, h2, h3, h4, h5, h5, h6, p {
   width: 100%;
   position: sticky;
   z-index: 1;
+  padding-top: 10px;
 }
 .navbar .nav-title {
   font-family: Lex;
   position: sticky;
   cursor: pointer;
   left: 8px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -248,8 +249,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 .search-bar {
   position: sticky;
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(36, 15, 144, 0.2)), to(rgba(47, 11, 79, 0.2)));
-  background: linear-gradient(90deg, rgba(36, 15, 144, 0.2) 20%, rgba(47, 11, 79, 0.2) 100%);
+  background-color: rgba(0, 0, 0, 0.6);
   top: 20px;
   height: 55px;
   display: -webkit-box;
@@ -267,8 +267,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   z-index: 1;
   margin: 0 auto;
   margin-left: 20px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
   -webkit-transition: width 0.3s;
@@ -291,19 +291,21 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin: 0;
 }
 .search-bar .custom_input input[type=text] {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
 }
 .search-bar .custom_input .input {
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 14px;
   padding: 2px 2px;
   width: 130%;
   height: 40px;
-  padding-left: 35px;
+  padding-left: 31px;
   outline: none;
+  background-color: #1fc577;
   color: #000000;
-  border: 3px solid #C4D1EB;
+  border: 3px solid rgb(27, 221, 102);
   border-radius: 14px;
+  font-family: Lex;
   /* box-shadow: 3px 3px 2px 0px #E2E2E2; */
 }
 .search-bar .custom_input .input-small {
@@ -330,6 +332,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-transition-timing-function: cubic-bezier(0, 0, 1, 1);
           transition-timing-function: cubic-bezier(0, 0, 1, 1);
   position: absolute;
+  left: 8px;
   fill: #4660DC;
   background-color: none;
   height: 20px;
@@ -337,13 +340,25 @@ h1, h2, h3, h4, h5, h5, h6, p {
 }
 
 .search-bar-large {
-  width: 220px;
+  width: 190px;
   padding: -80px;
 }
 .search-bar-large .svg_icon {
   margin-right: 85%;
 }
 
+@media (max-width: 900px) {
+  .navbar {
+    margin: 0 auto;
+    width: 40%;
+  }
+  .navbar .nav-title {
+    display: none;
+  }
+  .navbar .search-bar {
+    margin: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -959,7 +974,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .artist-banner {
   margin: 0px auto;
   position: relative;
-  top: -90px;
+  top: 20px;
+  -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -970,56 +987,61 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 80px;
+  padding-top: 2px;
+  width: 700px;
+  border-radius: 10px;
 }
 .artist-banner .artist-name {
-  margin-top: -15px;
+  margin-top: 6px;
   position: relative;
+  width: 95%;
   top: -10px;
   margin-left: 15px;
-  color: rgb(27, 221, 102);
+  color: white;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: 600;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+  line-height: 60px;
 }
 .artist-banner .artist-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
 }
 .artist-banner .artist-info .artist-image {
-  width: 500px;
-  margin: 0 auto;
+  max-height: 350px;
+  max-width: 800px;
   z-index: 2;
   -webkit-transition: 0.7s;
   transition: 0.7s;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  border-radius: 5px;
+  margin-left: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 10px;
 }
 .artist-banner .artist-info .artist-genre {
   margin-top: 6px;
-  color: rgb(27, 221, 102);
-  font-size: 16px;
-  background-color: rgba(27, 221, 102, 0.25);
-  padding: 6px 5px 6px 5px;
-  border-radius: 18px;
-  box-shadow: 0px 0px 1px 1px rgba(30, 27, 221, 0.6);
-  -webkit-box-shadow: 0px 0px 2px 1px rgba(30, 27, 221, 0.6);
-  -moz-box-shadow: 0px 0px 1px 1px rgba(30, 27, 221, 0.6);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background-color: rgba(36, 31, 31, 0.3);
+  padding: 3px 4px 3px 4px;
 }
 .artist-banner .artist-info .artist-genres {
   color: rgb(27, 221, 102);
-  font-size: 1em;
-  margin: 0 auto;
+  font-size: 0.5em;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1027,16 +1049,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
   gap: 0px 8px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-family: Lex;
 }
 .artist-banner .artist-info #genre {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: left;
-  width: 90%;
-  color: rgb(27, 221, 102);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 20px;
+  color: white;
+  letter-spacing: 1.5px;
+  font-size: 1.8em;
+  font-family: Alata;
+  margin-top: 10px;
+  margin-left: 15px;
 }
 
 .album-container {
@@ -1117,6 +1138,56 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @media screen and (min-width: 480px) {
   .album-card {
     size: 80%;
+  }
+}
+@media (min-width: 1380px) {
+  .artist-banner {
+    width: 50%;
+  }
+  .artist-banner .artist-info .artist-image {
+    height: 700px;
+  }
+}
+@media (max-width: 900px) {
+  .artist-banner {
+    width: 365px;
+    min-width: none;
+    max-width: none;
+    width: none;
+  }
+  .artist-banner .artist-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .artist-banner .artist-info .artist-image {
+    margin: none;
+    padding-right: 3px;
+  }
+  .artist-banner .artist-info .info {
+    position: relative;
+    top: -10px;
+    font-size: 0.8em;
+  }
+  .artist-banner .artist-info .info .artist-name {
+    width: 300px;
+    font-size: 2em;
+    top: -10px;
+  }
+  .artist-banner .artist-info .info #genre {
+    position: relative;
+    top: -30px;
+    font-size: 1.5em;
+  }
+  .artist-banner .artist-info .info .artist-genres {
+    width: 300px;
+    font-size: 0.6em;
+    margin-top: 0px;
+    position: relative;
   }
 }
 * {
@@ -1286,10 +1357,4 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
-}
-
-@media (max-width: 900px) {
-  .nav-title {
-    display: none;
-  }
 }

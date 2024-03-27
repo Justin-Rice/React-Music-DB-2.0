@@ -170,7 +170,7 @@ export default function HomeContainer(props){
 
     {artistInfo !='' &&  
      <div className="artist-banner"style={bgGradientStyle} >
-      <div className="artist-name">{artistInfo[0]}</div>  
+      {/* <div className="artist-name">{artistInfo[0]}</div>   */}
           {/* <div className="artist-followers">{artistInfo[3]}</div> */}
           <div className="artist-info">
           { props.accessToken &&
@@ -179,12 +179,19 @@ export default function HomeContainer(props){
             <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />
             </ColorExtractor>
          </a>}
-         <div id="genre">{artistInfo?.[2].length <=1 ? 'Genre:' : 'Genres:' }</div> 
-         <div className="artist-genres">
-            {artistInfo?.[2]?.map((genre, key)=>{
-              return <span className='artist-genre' key={key}>{genre.toUpperCase()}</span>
-            })}
-          </div>
+         <div className="info">
+
+         <div className="artist-name">{artistInfo[0]}</div>  
+
+           { artistInfo?.[2].length >= 1 && <div id="genre">{artistInfo?.[2].length <=1 ? 'Genre:' : 'Genres:' }
+              <div className="artist-genres"> 
+              {/* <span id="line">| </span>  */}
+                  {artistInfo?.[2]?.map((genre, key)=>{
+                    return (<span className='artist-genre' key={key}> {genre} </span> )
+                  })}
+              </div> 
+            </div>}
+            </div>
           </div>
           
          
