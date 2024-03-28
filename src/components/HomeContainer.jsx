@@ -2,9 +2,7 @@ import '../components/albums-container/Albums-Container.scss';
 import AlbumsContainer from './albums-container/Albums-Container';
 import {useState} from 'react';
 import NavBar from './navbar/NavBar';
-import { ColorExtractor } from 'react-color-extractor';
-import tinycolor from "https://esm.sh/tinycolor2";
-
+import ArtistBanner from './artist-banner/Artistst-Banner';
 
 
 export default function HomeContainer(props){
@@ -13,8 +11,6 @@ export default function HomeContainer(props){
     const [albumsInYears, setAlbumsInYears] = useState();
     const [singlesInYears, setSinglesInYears] = useState([]);
     const [searchClass, setSearchClass] = useState('search-bar-small');
-    const [imgColors, setImgColors] = useState();    
-
     const [searchText, setSearchText] = useState('');
     let searchParams = {
         method: 'GET',
@@ -24,25 +20,8 @@ export default function HomeContainer(props){
         }
     
       }
-      console.log(imgColors)
 
-      let mainColor = tinycolor(imgColors?.[1])
-      .setAlpha(1)
-      .darken(25)
-      .brighten(5)  
-      .saturate(5)
- let secondaryColor = tinycolor(imgColors?.[1])
-      .setAlpha(1)
-      .darken(10) 
-      .lighten()
-
-
-      const bgGradientStyle = {
-        background: `linear-gradient(${mainColor}A1, ${secondaryColor}A1)`
-    
-    }
-    
-    //async function that populates page based on random artist in array  NOT ACTIVE
+    //TODO: async function that populates page based on random artist in array  NOT ACTIVE
     async function preload(defaultArtists){
       randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
         let artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
@@ -57,6 +36,7 @@ export default function HomeContainer(props){
           return data.artists.items[0].id})
       //get request with artist ID grab all albums from artist 
     
+
       // display those albums to user
         await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album&market=US&limit=30',searchParams)
        .then(response=> response.json())
@@ -69,6 +49,7 @@ export default function HomeContainer(props){
         setSearchText(e.target.value);
         // console.log(searchText)
       }
+
       function handleMouseLeave(){
        if(searchClass == 'search-bar-large' && searchText == 0) setSearchClass('search-bar-small')
       }
@@ -79,6 +60,7 @@ export default function HomeContainer(props){
           document.getElementById('search').focus();
       } 
       }
+
       //async function that fetchs api data based on what user typed in search box
      async function handleSearchEnter(){
       setAlbumsInYears([]);
@@ -97,7 +79,7 @@ export default function HomeContainer(props){
 
           return data.artists.items[0].id})
       //get request with artist ID grab all albums from artist 
-       //   console.log(artistID);
+   
     
       //display those albums to user
         await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album,single&market=US&limit=30',searchParams)
@@ -155,7 +137,7 @@ export default function HomeContainer(props){
       })
       }
 
-      console.log(artistInfo)
+      // console.log(artistInfo)
 
     return (
     <div className='home-container' >
@@ -167,55 +149,26 @@ export default function HomeContainer(props){
           search={searchText} 
           onSearchText={handleSearchText}
       />
-
-    {artistInfo !='' &&  
-     <div className="artist-banner"style={bgGradientStyle} >
-      {/* <div className="artist-name">{artistInfo[0]}</div>   */}
-          {/* <div className="artist-followers">{artistInfo[3]}</div> */}
-          <div className="artist-info">
-          { props.accessToken &&
-         <a href={artistInfo[4]} target="_blank">
-          <ColorExtractor getColors={colors => setImgColors(colors)}>
-            <img className='artist-image' src={artistInfo[1]} alt={artistInfo[1]}  />
-            </ColorExtractor>
-         </a>}
-         <div className="info">
-
-         <div className="artist-name">{artistInfo[0]}</div>  
-
-           { artistInfo?.[2].length >= 1 && <div id="genre">{artistInfo?.[2].length <=1 ? 'Genre:' : 'Genres:' }
-              <div className="artist-genres"> 
-              {/* <span id="line">| </span>  */}
-                  {artistInfo?.[2]?.map((genre, key)=>{
-                    return (<span className='artist-genre' key={key}> {genre} </span> )
-                  })}
-              </div> 
-            </div>}
-            </div>
-          </div>
-          
-         
-       
-      </div>
-      }
-
+      <ArtistBanner
+        artistInfo={artistInfo}
+        accessToken={props.accessToken}
+      />
       <div className='home-album-content'>
-        {albumsInYears != undefined  ?  
-        <AlbumsContainer 
-          accessToken={props.accessToken} 
-          albumData={albumsInYears}
-          musicType='Album'
-        /> 
-        : null
-        }
-        { singlesInYears != undefined  ? 
-        <AlbumsContainer 
-          accessToken={props.accessToken} 
-          albumData={singlesInYears}
-          musicType='Single'
-        /> 
-        : null } 
-      
+          {albumsInYears != undefined  ?  
+            <AlbumsContainer 
+              accessToken={props.accessToken} 
+              albumData={albumsInYears}
+              musicType='Album'
+            /> 
+          : null
+          }
+          { singlesInYears != undefined  ? 
+            <AlbumsContainer 
+              accessToken={props.accessToken} 
+              albumData={singlesInYears}
+              musicType='Single'
+            /> 
+          : null } 
       </div>
     </div>
         )

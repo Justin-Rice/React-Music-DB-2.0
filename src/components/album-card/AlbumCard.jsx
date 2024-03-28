@@ -10,10 +10,8 @@ export default function AlbumCard(props){
     const [clicked, setClicked ] = useState(false);
     const [imgColors, setImgColors] = useState();    
     const {name, images} = props.albumData;
-    // console.log(imgColors?.[0])
-    // if value is true add fade class ot element which causes fade animation to play
     const [isTrue, setIsTrue] = useState(true)
-    // console.log(props)
+    
    
 let mainColor = tinycolor(imgColors?.[1])
  .setAlpha(1)

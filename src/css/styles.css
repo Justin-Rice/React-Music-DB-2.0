@@ -971,95 +971,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: Lex;
 }
 
-.artist-banner {
-  margin: 0px auto;
-  position: relative;
-  top: 20px;
-  -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-top: 2px;
-  width: 700px;
-  border-radius: 10px;
-}
-.artist-banner .artist-name {
-  margin-top: 6px;
-  position: relative;
-  width: 95%;
-  top: -10px;
-  margin-left: 15px;
-  color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 3.5em;
-  font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 60px;
-}
-.artist-banner .artist-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-}
-.artist-banner .artist-info .artist-image {
-  max-height: 350px;
-  max-width: 800px;
-  z-index: 2;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-  margin-left: 5px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  border-radius: 10px;
-}
-.artist-banner .artist-info .artist-genre {
-  margin-top: 6px;
-  color: white;
-  font-weight: 600;
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  background-color: rgba(36, 31, 31, 0.3);
-  padding: 3px 4px 3px 4px;
-}
-.artist-banner .artist-info .artist-genres {
-  color: rgb(27, 221, 102);
-  font-size: 0.5em;
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0px 8px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  font-family: Lex;
-}
-.artist-banner .artist-info #genre {
-  color: white;
-  letter-spacing: 1.5px;
-  font-size: 1.8em;
-  font-family: Alata;
-  margin-top: 10px;
-  margin-left: 15px;
-}
-
 .album-container {
   width: 65%;
   display: -webkit-box;
@@ -1138,56 +1049,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @media screen and (min-width: 480px) {
   .album-card {
     size: 80%;
-  }
-}
-@media (min-width: 1380px) {
-  .artist-banner {
-    width: 50%;
-  }
-  .artist-banner .artist-info .artist-image {
-    height: 700px;
-  }
-}
-@media (max-width: 900px) {
-  .artist-banner {
-    width: 365px;
-    min-width: none;
-    max-width: none;
-    width: none;
-  }
-  .artist-banner .artist-info {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .artist-banner .artist-info .artist-image {
-    margin: none;
-    padding-right: 3px;
-  }
-  .artist-banner .artist-info .info {
-    position: relative;
-    top: -10px;
-    font-size: 0.8em;
-  }
-  .artist-banner .artist-info .info .artist-name {
-    width: 300px;
-    font-size: 2em;
-    top: -10px;
-  }
-  .artist-banner .artist-info .info #genre {
-    position: relative;
-    top: -30px;
-    font-size: 1.5em;
-  }
-  .artist-banner .artist-info .info .artist-genres {
-    width: 300px;
-    font-size: 0.6em;
-    margin-top: 0px;
-    position: relative;
   }
 }
 * {
@@ -1357,4 +1218,344 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Mostly for vertical scrollbars */
+  height: 10px; /* Mostly for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */ }
+
+::-webkit-scrollbar-track {
+  /* Background */
+}
+
+h1, h2, h3, h4, h5, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+@font-face {
+  font-family: Lex;
+  src: url("../assets/fonts/Lexend-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Alata;
+  src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
+}
+@keyframes fadeinLoad {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes fadeoutLoad {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slide-in-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+  }
+}
+@keyframes slide-out-top {
+  10% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Mostly for vertical scrollbars */
+  height: 10px; /* Mostly for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb { /* Foreground */ }
+
+::-webkit-scrollbar-track {
+  /* Background */
+}
+
+h1, h2, h3, h4, h5, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+@font-face {
+  font-family: Lex;
+  src: url("../assets/fonts/Lexend-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Alata;
+  src: url("../assets/fonts/Alata-Regular.ttf");
+}
+@font-face {
+  font-family: Koh;
+  src: url("../assets/fonts/koh/KohSantepheap-Regular.ttf");
+}
+@keyframes fadeinLoad {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes fadeoutLoad {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slide-in-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+  }
+  10% {
+    -webkit-transform: translateY(-200px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+  }
+}
+@keyframes slide-out-top {
+  10% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+  }
+}
+.artist-banner {
+  margin: 0px auto;
+  position: relative;
+  top: 20px;
+  -webkit-box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 0px 31px 0px rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2px;
+  width: 700px;
+  border-radius: 10px;
+}
+.artist-banner .artist-name {
+  margin-top: 6px;
+  position: relative;
+  width: 95%;
+  top: -10px;
+  margin-left: 15px;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 3.5em;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 60px;
+}
+.artist-banner .artist-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+.artist-banner .artist-info .artist-image {
+  max-height: 350px;
+  max-width: 800px;
+  z-index: 2;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  margin-left: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+}
+.artist-banner .artist-info .artist-genre {
+  margin-top: 6px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background-color: rgba(36, 31, 31, 0.3);
+  padding: 3px 4px 3px 4px;
+}
+.artist-banner .artist-info .artist-genres {
+  color: rgb(27, 221, 102);
+  font-size: 0.5em;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 8px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: Lex;
+}
+.artist-banner .artist-info #genre {
+  color: white;
+  letter-spacing: 1.5px;
+  font-size: 1.8em;
+  font-family: Alata;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+@media (min-width: 1380px) {
+  .artist-banner {
+    width: 50%;
+  }
+  .artist-banner .artist-info .artist-image {
+    height: 700px;
+  }
+}
+@media (max-width: 900px) {
+  .artist-banner {
+    width: 365px;
+    min-width: none;
+    max-width: none;
+    width: none;
+  }
+  .artist-banner .artist-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .artist-banner .artist-info .artist-image {
+    margin: none;
+    padding-right: 3px;
+  }
+  .artist-banner .artist-info .info {
+    position: relative;
+    top: -10px;
+    font-size: 0.8em;
+  }
+  .artist-banner .artist-info .info .artist-name {
+    width: 300px;
+    font-size: 2em;
+    top: -10px;
+  }
+  .artist-banner .artist-info .info #genre {
+    position: relative;
+    top: -30px;
+    font-size: 1.5em;
+  }
+  .artist-banner .artist-info .info .artist-genres {
+    width: 300px;
+    font-size: 0.6em;
+    margin-top: 0px;
+    position: relative;
+  }
 }
