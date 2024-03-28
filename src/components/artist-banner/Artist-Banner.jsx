@@ -1,7 +1,6 @@
 import "./artist-banner.scss";
  import Preload from '../preload/Preload';
 import {useState} from 'react';
-
 import { ColorExtractor } from 'react-color-extractor';
 import tinycolor from "https://esm.sh/tinycolor2";
 
@@ -52,7 +51,9 @@ let secondaryColor = tinycolor(imgColors?.[1])
            </div>
         </div>
         : 
-         <Preload/>
+        <Preload
+        troubleshoot={props.troubleshoot}
+        />
         }
     </>
 )

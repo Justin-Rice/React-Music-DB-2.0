@@ -2,7 +2,7 @@ import '../components/albums-container/Albums-Container.scss';
 import AlbumsContainer from './albums-container/Albums-Container';
 import {useState} from 'react';
 import NavBar from './navbar/NavBar';
-import ArtistBanner from './artist-banner/Artistst-Banner';
+import ArtistBanner from './artist-banner/Artist-Banner';
 
 
 export default function HomeContainer(props){
@@ -11,6 +11,7 @@ export default function HomeContainer(props){
     const [albumsInYears, setAlbumsInYears] = useState();
     const [singlesInYears, setSinglesInYears] = useState([]);
     const [searchClass, setSearchClass] = useState('search-bar-small');
+    const [troubleshoot, setTroubleshoot] = useState(false);
     const [searchText, setSearchText] = useState('');
     let searchParams = {
         method: 'GET',
@@ -34,6 +35,10 @@ export default function HomeContainer(props){
           setArtistInfo( [...artistBundle])
           console.log(artistInfo)
           return data.artists.items[0].id})
+          .catch((error)=>{
+            console.log(error)
+            setTroubleshoot(true)
+          })
       //get request with artist ID grab all albums from artist 
     
 
@@ -78,6 +83,12 @@ export default function HomeContainer(props){
           setArtistInfo( [...artistBundle])
 
           return data.artists.items[0].id})
+          .catch((error)=>{
+            setTroubleshoot(true)
+            console.log(error)
+            console.log(troubleshoot)
+
+          })
       //get request with artist ID grab all albums from artist 
    
     
@@ -135,6 +146,11 @@ export default function HomeContainer(props){
         console.log(singles)
      
       })
+      .catch((error)=>{
+        console.log(error)
+        setTroubleshoot(true);
+
+      })
       }
 
       // console.log(artistInfo)
@@ -152,6 +168,7 @@ export default function HomeContainer(props){
       <ArtistBanner
         artistInfo={artistInfo}
         accessToken={props.accessToken}
+        troubleshoot={troubleshoot}
       />
       <div className='home-album-content'>
           {albumsInYears != undefined  ?  

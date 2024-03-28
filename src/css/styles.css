@@ -1320,6 +1320,68 @@ h1, h2, h3, h4, h5, h5, h6, p {
     transform: translateY(-1000px);
   }
 }
+.preload-container {
+  margin: 100px auto;
+  font-family: Alata;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 70px;
+}
+.preload-container .preload {
+  width: 500px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(27, 221, 102)), to(rgb(9, 71, 33)));
+  background-image: linear-gradient(to top, rgb(27, 221, 102), rgb(9, 71, 33));
+  border-radius: 20px;
+  -webkit-animation: slide-in-top 0.8s;
+          animation: slide-in-top 0.8s;
+}
+.preload-container .preload .preload-header {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: center;
+  -webkit-animation: fadeinLoad 3s;
+          animation: fadeinLoad 3s;
+  color: black;
+}
+.preload-container .preload .preload-info {
+  margin: 10px auto;
+  text-align: left;
+  font-size: 1.1em;
+  width: 80%;
+  -webkit-animation: fadeinLoad 3s;
+          animation: fadeinLoad 3s;
+  margin-bottom: 40px;
+}
+.preload-container .preload .preload-info span {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+@media (max-width: 1100px) {
+  .preload-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .preload-container .preload {
+    width: 300px;
+    min-height: 300px;
+  }
+  .preload-container .preload .preload-header {
+    font-size: 1.9em;
+  }
+}
 * {
   margin: 0;
   padding: 0;

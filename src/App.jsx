@@ -25,6 +25,14 @@ function App() {
   
   },[])
 
+  //after 1 hour refreshes the page so spotify token does not expire
+  function refreshPage(time){
+    setTimeout(()=>{
+      location.reload();
+    },time)
+  }
+  refreshPage(3600000);
+
   return  <HomeContainer accessToken={accessToken} />
     
 }
