@@ -4,7 +4,7 @@
      z-index: -99;
   
     height: 140px;
-    width: 400px;
+    width: 370px;
     // background-color: rgb(77, 74, 110);
     // background-color: rgb(54, 47, 73);
     // background-color: structure.$secondary;
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: 0.5s;
     animation: fadeinLoad 1s 0.4s forwards;
     opacity: 0;
@@ -35,19 +35,18 @@
         font-size: 3.5em;
         // width: 210px;
         height: 140px;
-        // color: structure.$text;
-        //   color: black;
-        // margin-right: 20px;
-        margin-left: 10px;
-        // background-color: pink;
+       
+        margin-left: 5px;
+        //  background-color: pink;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        //  justify-content: space-between;
     }
     .card-title{
         line-height: 30px;
         height: 122px;
-        width: 225px;
+        width: 210px;
+        // width: 90%;
         font-size: .45em;
          overflow:hidden;
         // color: white;
@@ -55,21 +54,17 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        margin-right: 20px;
-        // background-color: purple;
-        // margin-top: 20px;
-        // display: flex;
-        // align-items: center;
-        // justify-content: space-evenly;
+         margin-right: 15px;
+        
 
     }
 
 
 }
 
-.album-card:hover{
-    transform: scale(1.03);
-}
+// .album-card:hover{
+//     transform: scale(1.03);
+// }
 
 
 

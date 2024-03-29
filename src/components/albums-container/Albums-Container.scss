@@ -8,7 +8,7 @@
   align-content: center;
   justify-content: space-evenly;
   flex-direction: column;
-  //  background-color: red;
+    // background-color: red;
   flex-wrap: wrap;
   gap: 20px 12px;
   margin-top: 60px;
@@ -21,74 +21,76 @@
   // position: absolute;
   // right: 50px;
 
-}
-
-
-
-
-.album-container{
-  width: 65%;
-    // background-color: rgb(38, 22, 126);
-  display: flex;
-  // align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-
-  .music-type{
-    font-size: 40px;
-    color: structure.$text;
-    background-color: rgba(7, 212, 86, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    text-indent: 10px;
-    padding: 2px 2px 2px 2px;
-    // width: 70%;
-    font-weight: 550;
-    letter-spacing: 0.8px;
-  }
-
-  .album-year{
-    font-size: 30px;
-    color: white;
-    position: relative ;
-    top: 0px;
+  .album-container{
+    width: 65%;
+      // background-color: rgb(38, 22, 126);
+    display: flex;
+    // align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-right: 80px;
-    width: 100%;
-    letter-spacing: 3px;
-    margin-left: 5px;
-    margin-right: 80px;
-    font-weight: 500;
-    
+  
+  
+    .music-type{
+      font-size: 40px;
+      color: structure.$text;
+      background-color: rgba(7, 212, 86, 0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      text-indent: 10px;
+      padding: 2px 2px 2px 2px;
+      // width: 70%;
+      font-weight: 550;
+      letter-spacing: 0.8px;
+    }
+  
+    .album-year{
+      font-size: 30px;
+      color: white;
+      position: relative ;
+      top: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding-right: 80px;
+      width: 100%;
+      letter-spacing: 3px;
+      margin-left: 5px;
+      margin-right: 80px;
+      font-weight: 500;
+      
+    }
+    .album-year::after{
+      content: "";
+      display: block;
+      width: 220px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: structure.$text;
+      opacity: 80%;
+      position: relative;
+      left: -2px;
+    }
+    .album-years-container{
+          // background-color: green;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px 20px;
+      // margin-left: ;
+      
+    }
+  
+  
   }
-  .album-year::after{
-    content: "";
-    display: block;
-    width: 220px;
-    height: 4px;
-    border-radius: 2px;
-    background-color: structure.$text;
-    opacity: 80%;
-    position: relative;
-    left: -2px;
-  }
-  .album-years-container{
-        // background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px 20px;
-    // margin-left: ;
-    
-  }
-
+  
+  
 
 }
+
+
+
 
 
 
@@ -108,3 +110,15 @@
 
 }
 
+@media (min-width: 1380px) {
+
+}
+
+@media  (max-width: 900px){
+.home-album-content{
+  .album-container{
+
+  }
+}
+
+}

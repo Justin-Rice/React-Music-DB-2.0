@@ -6,27 +6,34 @@ import tinycolor from "https://esm.sh/tinycolor2";
 export default function AlbumModal(props){
   const [albumInfo, setAlbumInfo] = useState();
   const {colors} = props;
-
-  let modalMainColor = tinycolor(colors?.mainColor)
-  .setAlpha(1)
-  .darken(40)
-  .brighten(20)  
-  .saturate(10)
-  let modalSecondaryColor = tinycolor(colors?.secondaryColor)
-  .setAlpha(1)
-  .darken(10) 
-  .saturate(25)
-  .lighten()
   
-  const darkerGradientStyle = {
-    background: `linear-gradient(${modalMainColor + 'B3'}, ${modalSecondaryColor + 'B3'})`,
+
+
+  console.log(colors)
+   
+
+    const modalMain = tinycolor(colors[1])
+    .setAlpha(1)
+  .darken(65)
+  .brighten(18)  
+  // .saturate(15)
+  .desaturate(25)
+    
+    const modalSecondary = tinycolor(colors[1])
+    .setAlpha(1)
+  .darken(10) 
+  .saturate(15)
+  .lighten()
+    
+  
+  let darkerGradientStyle = {
+    background: `linear-gradient(${modalMain + 'B3'}, ${modalSecondary + 'B3'})`,
     
 }
-
-const opaque = {
-  background: `linear-gradient(${modalMainColor + 'FF'}, ${modalSecondaryColor + 'FF'})`,
+let opaque = {
+  background: `linear-gradient(${modalMain + 'FF'}, ${modalSecondary + 'FF'})`,
 }
-   console.log(colors.bgGradientStyle)
+  //  console.log(colors.bgGradientStyle)
     let searchParams = {
         method: 'GET',
         headers: {
@@ -50,7 +57,7 @@ const opaque = {
 
           },5000)
         }
-        console.log(albumInfo)
+        // console.log(albumInfo)
      //stops child element from firing onclick to close modal
       function handleChildElementClick(e){
         e.stopPropagation()

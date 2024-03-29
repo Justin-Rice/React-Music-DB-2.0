@@ -970,8 +970,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
           animation: fadeinLoad 1s 0.4s forwards;
   font-family: Lex;
 }
-
-.album-container {
+.home-album-content .album-container {
   width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -986,7 +985,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.album-container .music-type {
+.home-album-content .album-container .music-type {
   font-size: 40px;
   color: rgb(27, 221, 102);
   background-color: rgba(7, 212, 86, 0.1);
@@ -998,7 +997,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-weight: 550;
   letter-spacing: 0.8px;
 }
-.album-container .album-year {
+.home-album-content .album-container .album-year {
   font-size: 30px;
   color: white;
   position: relative;
@@ -1012,7 +1011,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-right: 80px;
   font-weight: 500;
 }
-.album-container .album-year::after {
+.home-album-content .album-container .album-year::after {
   content: "";
   display: block;
   width: 220px;
@@ -1023,7 +1022,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   position: relative;
   left: -2px;
 }
-.album-container .album-years-container {
+.home-album-content .album-container .album-years-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1154,7 +1153,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-card {
   z-index: -99;
   height: 140px;
-  width: 400px;
+  width: 370px;
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
   display: -webkit-box;
@@ -1166,7 +1165,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-animation: fadeinLoad 1s 0.4s forwards;
@@ -1191,33 +1190,25 @@ h1, h2, h3, h4, h5, h5, h6, p {
   letter-spacing: 2.5px;
   font-size: 3.5em;
   height: 140px;
-  margin-left: 10px;
+  margin-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 .album-card .card-title {
   line-height: 30px;
   height: 122px;
-  width: 225px;
+  width: 210px;
   font-size: 0.45em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  margin-right: 20px;
-}
-
-.album-card:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  margin-right: 15px;
 }
 
 * {

@@ -2,7 +2,7 @@
 import '../album-modal/Album-Modal.scss';
 import './Album-Card.scss';
 import AlbumModal from '../album-modal/Album-Modal';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ColorExtractor } from 'react-color-extractor';
 import tinycolor from "https://esm.sh/tinycolor2";
 export default function AlbumCard(props){
@@ -11,26 +11,26 @@ export default function AlbumCard(props){
     const [imgColors, setImgColors] = useState();    
     const {name, images} = props.albumData;
     const [isTrue, setIsTrue] = useState(true)
-    
    
-let mainColor = tinycolor(imgColors?.[1])
- .setAlpha(1)
- .darken(25)
- .brighten(5)  
- .saturate(5)
- let secondaryColor = tinycolor(imgColors?.[1])
- .setAlpha(1)
- .darken(10) 
- .lighten()
- 
+
+    let mainColor = tinycolor(imgColors?.[1])
+    .setAlpha(1)
+    .darken(25)
+    .brighten(5)  
+    .saturate(5)
+    let secondaryColor = tinycolor(imgColors?.[1])
+    .setAlpha(1)
+    .darken(10) 
+    .lighten()
+
  
  let textColor = '#FFF'
-//  tinycolor(imgColors?.[0]).complement().darken(60).setAlpha(0.8).desaturate(20)
-//  .darken(80)  
-//  .desaturate(0);
+
 
 const bgGradientStyle = {
-    background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`
+    background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`,
+    borderRadius: "10px",
+
 
 }
 
@@ -75,7 +75,7 @@ const textGradientStyle = {
                 setClicked={setClicked} 
                 clicked={clicked}
                 isTrue={isTrue}
-                colors={{mainColor, secondaryColor}}
+                colors={imgColors}
             />
             }
             <div className='album-card' albumid={props.albumData.id}  >

@@ -4,7 +4,7 @@ export default function Tracklist(props){
 const {tracks} = props;
 let output = [];
     // console.log(tracks);
-    console.log(props.gradient)
+    // console.log(props.gradient)
     //converts ms to minutes and seconds
     function msConverter(ms){
         var mins = Math.floor(ms / 60000);
