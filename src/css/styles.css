@@ -293,6 +293,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .search-bar .custom_input input[type=text] {
   background-color: rgb(255, 255, 255);
 }
+.search-bar .custom_input input[type=text]:disabled {
+  background-color: rgba(255, 255, 255, 0.226);
+}
 .search-bar .custom_input .input {
   margin: 0 auto;
   font-size: 14px;
@@ -460,8 +463,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
 }
 .album-modal {
-  background-color: rgba(0, 0, 0, 0.2);
   color: rgb(218, 218, 218);
+  z-index: 99;
   position: fixed;
   height: 100%;
   width: 100vw;
@@ -485,9 +488,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
   border-radius: 8px;
   margin-top: 10px;
   max-height: 650px;
-  min-height: 450px;
+  padding-bottom: 2px;
   overflow: scroll;
-  width: 600px;
+  width: 575px;
   -webkit-animation: slide-in-top 0.6s forwards;
           animation: slide-in-top 0.6s forwards;
   padding-right: 0px;
@@ -514,6 +517,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   max-height: 350px;
   letter-spacing: 2px;
   font-weight: 500;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .album-modal .album-modal-details .album-modal-top .album-modal-top-flex {
   display: -webkit-box;
@@ -534,6 +539,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-modal .album-modal-details .album-modal-top .album-modal-title {
   width: 100%;
   padding-left: 20px;
+  font-size: 0.6em;
   text-align: left;
   max-height: 250px;
   position: relative;
@@ -544,6 +550,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-top: 20px;
+  margin-right: 10px;
   font-family: Alata;
   font-weight: 600;
 }
@@ -575,6 +582,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .album-modal .album-modal-details .album-modal-middle .album-modal-runtime {
   margin-right: 10px;
 }
+.album-modal .album-modal-details .album-modal-bottom {
+  padding-top: 0px;
+}
 .album-modal.fade {
   -webkit-animation: fadeoutLoad 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
           animation: fadeoutLoad 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -587,15 +597,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
 @media (min-width: 1380px) {
   .album-modal .album-modal-details {
     width: 45%;
-    max-height: 75%;
-    min-height: 500px;
     font-size: 1.1em;
   }
 }
 @media (max-width: 800px) {
   .album-modal .album-modal-details {
     width: 350px;
-    min-height: 380px;
     max-height: 75%;
   }
   .album-modal .album-modal-details .album-modal-top-flex {
@@ -722,7 +729,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 1px;
   margin-top: 1px;
   overflow-x: scroll;
-  border-radius: 2px;
+  border-radius: 0px;
   background-color: rgba(0, 0, 0, 0.2);
 }
 .tracklist .track .track-info {
@@ -736,7 +743,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-left: 5px;
-  height: 25px;
+  height: 15px;
 }
 .tracklist .track .track-info .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
@@ -753,9 +760,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
+  top: 3px;
   margin-right: 160px;
   letter-spacing: 0.8px;
-  height: 25px;
+  height: 23px;
 }
 .tracklist .track .track-info .track-name a {
   text-decoration: none;
@@ -785,6 +793,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-left: 55px;
 }
 .tracklist .track .track-artist a {
+  position: relative;
   text-decoration: none;
   font-size: 0.7em;
   color: black;
@@ -1174,13 +1183,13 @@ h1, h2, h3, h4, h5, h5, h6, p {
   box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   -webkit-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   -moz-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
+  cursor: pointer;
 }
 .album-card .card-image {
   height: 140px;
   width: 140px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-  cursor: pointer;
   opacity: 90%;
   z-index: 10;
 }
@@ -1209,6 +1218,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin-right: 15px;
+}
+
+.album-card:hover {
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -1497,7 +1510,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 6px;
   position: relative;
   width: 95%;
-  top: -10px;
+  top: -5px;
   margin-left: 15px;
   color: white;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
@@ -1510,9 +1523,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -1522,13 +1532,14 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .artist-banner .artist-info .artist-image {
   max-height: 350px;
   max-width: 800px;
-  z-index: 2;
+  z-index: 0;
   -webkit-transition: 0.7s;
   transition: 0.7s;
   margin-left: 5px;
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 10px;
+  position: relative;
 }
 .artist-banner .artist-info .artist-genre {
   margin-top: 6px;
@@ -1544,7 +1555,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .artist-banner .artist-info .artist-genres {
   color: rgb(27, 221, 102);
   font-size: 0.5em;
-  width: 90%;
+  max-width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

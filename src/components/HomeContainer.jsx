@@ -13,6 +13,7 @@ export default function HomeContainer(props){
     const [searchClass, setSearchClass] = useState('search-bar-small');
     const [troubleshoot, setTroubleshoot] = useState(false);
     const [searchText, setSearchText] = useState('');
+    const [disableSearch, setDisableSearch]= useState(false);
     let searchParams = {
         method: 'GET',
         headers: {
@@ -36,7 +37,7 @@ export default function HomeContainer(props){
           console.log(artistInfo)
           return data.artists.items[0].id})
           .catch((error)=>{
-            console.log(error)
+            console.log(error);
             setTroubleshoot(true)
           })
       //get request with artist ID grab all albums from artist 
@@ -64,6 +65,12 @@ export default function HomeContainer(props){
           setSearchClass('search-bar-large')
           document.getElementById('search').focus();
       } 
+
+      }
+
+      function handleModaLoad(){
+        setDisableSearch(!disableSearch);
+        console.log(disableSearch);
       }
 
       //async function that fetchs api data based on what user typed in search box
@@ -93,7 +100,7 @@ export default function HomeContainer(props){
    
     
       //display those albums to user
-        await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album,single&market=US&limit=30',searchParams)
+        await fetch( 'https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album,single&market=US&limit=30',searchParams)
        .then(response=> response.json())
        .then(data => {
         setAlbumsInYears([]);
@@ -164,6 +171,7 @@ export default function HomeContainer(props){
           onMouseLeave={handleMouseLeave} 
           search={searchText} 
           onSearchText={handleSearchText}
+          disabledClick={disableSearch}
       />
       <ArtistBanner
         artistInfo={artistInfo}
@@ -176,6 +184,7 @@ export default function HomeContainer(props){
               accessToken={props.accessToken} 
               albumData={albumsInYears}
               musicType='Album'
+              onModalLoad={handleModaLoad}
             /> 
           : null
           }
@@ -184,6 +193,8 @@ export default function HomeContainer(props){
               accessToken={props.accessToken} 
               albumData={singlesInYears}
               musicType='Single'
+              onModalLoad={handleModaLoad}
+
             /> 
           : null } 
       </div>

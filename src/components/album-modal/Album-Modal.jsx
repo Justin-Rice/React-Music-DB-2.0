@@ -9,7 +9,7 @@ export default function AlbumModal(props){
   
 
 
-  console.log(colors)
+  // console.log(colors)
    
 
     const modalMain = tinycolor(colors[1])

@@ -11,7 +11,7 @@
             margin-top: 1px;
             overflow-x: scroll;
             // border: solid structure.$text 1px;
-             border-radius: 2px;
+             border-radius: 0px;
             background-color:rgb(0,0,0,0.2);
             .track-info{
                 display: flex;
@@ -19,7 +19,7 @@
                 justify-content: space-between;
                 margin-left: 5px;
                 //  background-color: pink;
-                height: 25px;
+                height: 15px;
                 .material-symbols-outlined{
                     font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
                     color: red;
@@ -45,9 +45,10 @@
                         // animation: marquee 30s linear infinite;
                         // color: structure.$text;
                         // z-index: 99;
+                        top: 3px;
                         margin-right: 160px;
                         letter-spacing: 0.8px;
-                        height: 25px;
+                        height: 23px;
                         
                         & a{
                             text-decoration: none;
@@ -92,7 +93,8 @@
             margin-left: 55px;
            }
             .track-artist a{
-
+                position: relative;
+                // top: -5px;
                  text-decoration: none;
                 font-size: 0.7em;
                 color: black;
@@ -102,6 +104,7 @@
                 // background-color: none;
 
                 transition: 0.2s;
+                // margin-top: -10px;
 
             }
             .track-artist a:hover{

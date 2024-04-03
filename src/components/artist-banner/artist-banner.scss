@@ -12,16 +12,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+    // justify-content: space-between;
    padding-top: 2px;
    width: 700px;
    border-radius: 10px;
+  //  background-color: brown;
   
     .artist-name{
       margin-top: 6px;
       position: relative;
       width: 95%;
-      top: -10px;
+      top: -5px;
+      // right: 10px;
       margin-left: 15px;
       color: white;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -29,29 +31,31 @@
       font-weight: 600;
       letter-spacing: 3px;
       line-height: 60px;
-      // background-color: pink;
+      //  background-color: pink;
     }
   
     .artist-info{
       display: flex;
-      // align-items: center;
-      justify-content: space-between;
+      //  align-items: center;
+      // justify-content: space-evenly;
       flex-direction: row;
           //  background-color: red;
       //  max-width: 750px;
-      width: 100%;
+     width: 100%;
       //  padding-bottom: -20px;
       .artist-image{
          max-height: 350px;
          max-width: 800px;
         // margin: 0 auto;
-        z-index: 2;
+        z-index: 0;
         transition: 0.7s;
         // margin-bottom: 15px;
          margin-left: 5px;
          margin-top: 3px;
          margin-bottom: 3px;
         border-radius: 10px;
+        position: relative;
+        // right:48px;
         // margin-top: 10px;
         // background-color: red;
       }
@@ -76,7 +80,7 @@
         font-size: 0.5em;
         // margin: 0 auto;
         // width: 90%;
-        width: 90%;
+        max-width: 90%;
         display: flex;
         gap: 0px 8px;
         flex-wrap: wrap;

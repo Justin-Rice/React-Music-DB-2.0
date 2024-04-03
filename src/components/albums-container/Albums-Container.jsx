@@ -3,6 +3,7 @@ import AlbumCard from "../album-card/AlbumCard";
 export default function AlbumsContainer(props){
     const {albumData, musicType, accessToken} = props;
     let yearGroup = '';
+    console.log(props);
     console.log(albumData)
     return(
         <div className="album-container" key=''>
@@ -19,6 +20,7 @@ export default function AlbumsContainer(props){
                 return ( 
                     <div className="outer" key={key}>
                         <AlbumCard
+                            onModalLoad={props.onModalLoad}
                             accessToken={accessToken}
                             albumData={album}
                             key={key}

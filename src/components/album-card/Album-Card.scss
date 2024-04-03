@@ -19,12 +19,13 @@
     box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
     -webkit-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
     -moz-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+    cursor: pointer;
+
     .card-image{
         height: 140px;
         width: 140px;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
-        cursor: pointer;
         opacity: 90%;
         z-index: 10;
     }
@@ -33,15 +34,12 @@
         font-weight: 600;
         letter-spacing: 2.5px;
         font-size: 3.5em;
-        // width: 210px;
         height: 140px;
-       
         margin-left: 5px;
-        //  background-color: pink;
         display: flex;
         align-items: center;
-        //  justify-content: space-between;
     }
+
     .card-title{
         line-height: 30px;
         height: 122px;
@@ -62,9 +60,12 @@
 
 }
 
-// .album-card:hover{
-//     transform: scale(1.03);
-// }
+.album-card:hover{
+    // transform: scale(1.01);
+    // height: 101%;
+    // width: 101%;
+    background-color: rgba(0,0,0,0.15);
+}
 
 
 

@@ -34,7 +34,7 @@ return  (
                 Once an artist is found you can click on their image to explore their spotify page, or click on an album to see its tracklist 
             </p>
             <p>
-                This website is was designed and developed by <span> Justin Rice</span>, using SCSS and React
+                This website was designed and developed by <span> Justin Rice</span>, using SCSS and React
             </p>
 
         </div>

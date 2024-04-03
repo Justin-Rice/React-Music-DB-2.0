@@ -6,13 +6,12 @@ import { useState, useEffect } from "react";
 import { ColorExtractor } from 'react-color-extractor';
 import tinycolor from "https://esm.sh/tinycolor2";
 export default function AlbumCard(props){
-
+    
     const [clicked, setClicked ] = useState(false);
     const [imgColors, setImgColors] = useState();    
     const {name, images} = props.albumData;
     const [isTrue, setIsTrue] = useState(true)
-   
-
+    // console.log(props)
     let mainColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(25)
@@ -22,48 +21,36 @@ export default function AlbumCard(props){
     .setAlpha(1)
     .darken(10) 
     .lighten()
-
  
  let textColor = '#FFF'
-
 
 const bgGradientStyle = {
     background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`,
     borderRadius: "10px",
-
-
 }
 
 const textGradientStyle = {
     color: textColor,
-    // 'text-decoration': "underline " + secondaryColor.darken(45) + " 3px"
-
 }
 
 
     function handleAlbumClick(){
+        props.onModalLoad();
         //if true instantly change both values
         if(isTrue){
             setIsTrue(!isTrue)
-
-          
-                setClicked(!clicked)
-               
-       
-        
+            setClicked(!clicked)
             document.body.style.overflow = "hidden"  
            
-              }else{
+        }else{
         //else add fade class then change clicked value after 400ms animation plays
-        setIsTrue(!isTrue)
-        document.body.style.overflow = "visible"  
+            setIsTrue(!isTrue)
+            document.body.style.overflow = "visible"  
 
-        setTimeout(()=>{
-         setClicked(!clicked)
-        
-
-        },650)
-    }
+            setTimeout(()=>{
+                setClicked(!clicked)
+            },650)
+        }
     }
     return (
       
