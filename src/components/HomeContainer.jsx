@@ -100,6 +100,7 @@ export default function HomeContainer(props){
    
     
       //display those albums to user
+      if(artistID != undefined){
         await fetch( 'https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album,single&market=US&limit=30',searchParams)
        .then(response=> response.json())
        .then(data => {
@@ -158,7 +159,10 @@ export default function HomeContainer(props){
         setTroubleshoot(true);
 
       })
+      } else{
+        setTroubleshoot(true);
       }
+    }
 
       // console.log(artistInfo)
 
