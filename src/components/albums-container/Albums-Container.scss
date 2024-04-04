@@ -2,13 +2,12 @@
 
 .home-album-content{
   width: 70%;
-   margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   align-items: center; 
   align-content: center;
   justify-content: space-evenly;
   flex-direction: column;
-    // background-color: red;
   flex-wrap: wrap;
   gap: 20px 12px;
   margin-top: 60px;
@@ -17,21 +16,15 @@
   transition: 0.7s;
   animation: fadeinLoad 1s 0.4s forwards;
   font-family: Lex;
-  // font-weight: 500;
-  // position: absolute;
-  // right: 50px;
-
+ 
   .album-container{
     width: 65%;
-      // background-color: rgb(38, 22, 126);
     display: flex;
-    // align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
-  
-  
+
     .music-type{
       font-size: 40px;
       color: structure.$text;
@@ -40,7 +33,6 @@
       backdrop-filter: blur(5px);
       text-indent: 10px;
       padding: 2px 2px 2px 2px;
-      // width: 70%;
       font-weight: 550;
       letter-spacing: 0.8px;
     }
@@ -72,14 +64,11 @@
       left: -2px;
     }
     .album-years-container{
-          // background-color: green;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 20px 20px;
-      // margin-left: ;
-      
+      gap: 20px 20px;      
     }
   
   
@@ -94,14 +83,14 @@
 
 
 
-  @keyframes fadeinLoad {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+@keyframes fadeinLoad {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
 @media screen and (min-width: 480px) {
     .album-card{

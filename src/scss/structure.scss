@@ -119,29 +119,15 @@
       -webkit-transform: translateY(-1000px);
       transform: translateY(-1000px);
     }
-    100% {
-      // opacity: 0;
-
-      
+    100% {  
     }
   }
   @keyframes slide-out-top {
-    0% {
-     
-    }
-
     10%{
       -webkit-transform: translateY(0);
       transform: translateY(0);
     }
-
-    70%{
-     
-      // opacity: 0;
-
-    }
     100% {
-
       -webkit-transform: translateY(-1000px);
       transform: translateY(-1000px);
     }

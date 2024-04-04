@@ -6,32 +6,31 @@ import { useState, useEffect } from "react";
 import { ColorExtractor } from 'react-color-extractor';
 import tinycolor from "https://esm.sh/tinycolor2";
 export default function AlbumCard(props){
-    
     const [clicked, setClicked ] = useState(false);
     const [imgColors, setImgColors] = useState();    
     const {name, images} = props.albumData;
-    const [isTrue, setIsTrue] = useState(true)
-    // console.log(props)
+    const [isTrue, setIsTrue] = useState(true);
+
     let mainColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(25)
     .brighten(5)  
-    .saturate(5)
+    .saturate(5);
     let secondaryColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(10) 
-    .lighten()
+    .lighten();
  
- let textColor = '#FFF'
+    let textColor = '#FFF'
 
-const bgGradientStyle = {
-    background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`,
-    borderRadius: "10px",
-}
+    const bgGradientStyle = {
+        background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`,
+        borderRadius: "10px",
+    }
 
-const textGradientStyle = {
-    color: textColor,
-}
+    const textGradientStyle = {
+        color: textColor,
+    }
 
 
     function handleAlbumClick(){

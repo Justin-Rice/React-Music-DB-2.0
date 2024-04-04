@@ -18,20 +18,16 @@ let output = [];
 
     // cleans artist data to grab artist name and link to spotify page
     function artistCleaner(artists){
-         output = []
-        
+         output = [];
             artists.forEach((artist)=>{
                 let link = artist.external_urls.spotify
-               
+            
                 let artistData = {
                     name: artist.name,
                     link: link
                 }
-               
                  output.push(artistData)
             })
-      
-
         return output
     }
 

@@ -2,53 +2,36 @@
 
 .navbar{
     display: flex;
-     top: 0px;
+    top: 0px;
     justify-content: center;
     align-items:center;
     width: 100%;
     position: sticky;
-     z-index: 1;
+    z-index: 1;
     padding-top: 10px;
-    //  background-color: green;
-    // background-color: rgba(0, 0, 0, 0.8);
-    // backdrop-filter: blur(5px);
 
     .nav-title{
         font-family: Lex;
         position: sticky;
-     cursor: pointer;
+        cursor: pointer;
         left: 8px;
         font-size: 20px;
         font-weight: 600;
-        // align-items: center;
-
-        //  line-height: 20px;
-        //  background-color: green;
-        // width: 30px;
-        
         flex-direction: row;
         color: structure.$text;
     }
 }
 .search-bar{
-     position: sticky;
-      background-color:rgba(0, 0, 0, 0.6);
-    //  background: linear-gradient(90deg, rgba(36,15,144,0.2) 20%, rgba(47,11,79,0.2) 100%);
+    position: sticky;
+    background-color:rgba(0, 0, 0, 0.6);
     top: 20px;
     height: 55px;
-    // -webkit-filter: blur(0.5px);
-    // border-bottom: 3px solid rgb(60, 27, 94);
     display: flex;
     align-items: center;
-    //  justify-content: end; 
     justify-content: center;
     backdrop-filter: blur(5px);
-
-    // box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.3);
     width: 60px;
     z-index: 1;
-
-    // width: 70%;
     margin: 0 auto;
     margin-left:20px;
     border-bottom-left-radius: 5px;
@@ -57,19 +40,15 @@
     padding-right: 10px;
     transition: width 0.3s;
     transition-timing-function: cubic-bezier(0, 0, 1, 1);
-
-
     border-radius: 20px;
+
     .custom_input {
-        //  background-color: red;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-      margin: 0;
-       
-        // transition: width .5s ease;
-
+        margin: 0;
+    
         input[type="text"]{
             background-color:rgba(255, 255, 255, 1);
         }
@@ -77,30 +56,22 @@
             background-color:rgba(255, 255, 255, 0.226);
         }
         .input {
-        margin: 0 auto;
+            margin: 0 auto;
             font-size: 14px;
-             padding: 2px 2px;
-             width: 130%;
-            // width: 300px;
-
+            padding: 2px 2px;
+            width: 130%;
             height: 40px;
-             padding-left: 31px;
+            padding-left: 31px;
             outline: none;
-             background-color: #1fc577;
+            background-color: #1fc577;
             color: #000000;
             border: 3px solid structure.$text;
             border-radius: 14px;
             font-family: Lex;
-            
-            /* box-shadow: 3px 3px 2px 0px #E2E2E2; */
-            
         }
         
-        
         .input-small{
-            width: 20px;
-            // transition: width .1s ease;
-        
+            width: 20px;        
         }
         
         .input::placeholder {
@@ -109,58 +80,41 @@
         
         .svg_icon {
             transition:  all .3s;
-            transition-timing-function: cubic-bezier(0, 0, 1, 1);
-            // animation-delay: 2s;
-         
+            transition-timing-function: cubic-bezier(0, 0, 1, 1);         
             position: absolute;
             left: 8px;
-            // right: 14px;
             fill: #4660DC;
             background-color: none;
-            // width: 40px;
-             height: 20px;
+            height: 20px;
             cursor: pointer;
-            
-        
         }
-        
-    
+          
     }
    
-  
-
-
 }
 
 .search-bar-large{
-            // background: #F2F2F2;
-            // border: 3px solid #5A7EC7;
-            // border-radius: 20px;
-            // transition: all .5s ease;
-            width: 190px;
-             padding: -80px;
-            .svg_icon{
-            //     animation-delay: 2s;
-            //   transition: 1.2s ease-in-out;
-                margin-right: 85%;
-            }
-        
-        }
+    width: 190px;
+    padding: -80px;
 
-        @media (max-width: 900px) {
-            .navbar{
-                 margin: 0 auto;
-                width: 40%;
-                // z-index: 1;
+    .svg_icon{
+        margin-right: 85%;
 
-                // background-color: black;
-                .nav-title{
-                   
-                    display: none;
-                }
-                .search-bar{
-                    margin: 0;
-                }
-            }
+    }
+
+}
+
+@media (max-width: 900px) {
+    .navbar{
+        margin: 0 auto;
+        width: 40%;
+
+        .nav-title{
+         display: none;
         }
+        .search-bar{
+            margin: 0;
+        }
+    }
+}
         

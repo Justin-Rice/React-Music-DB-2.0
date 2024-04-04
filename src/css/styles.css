@@ -309,7 +309,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
   border: 3px solid rgb(27, 221, 102);
   border-radius: 14px;
   font-family: Lex;
-  /* box-shadow: 3px 3px 2px 0px #E2E2E2; */
 }
 .search-bar .custom_input .input-small {
   width: 20px;
@@ -497,8 +496,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   box-shadow: -1px 0px 12px -4px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px 0px 12px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 0px 12px -4px rgba(0, 0, 0, 0.75);
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overflow-y: scroll;
 }
 .album-modal .album-modal-details .album-modal-top {
@@ -1175,10 +1174,10 @@ h1, h2, h3, h4, h5, h5, h6, p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 10px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-animation: fadeinLoad 1s 0.4s forwards;
-          animation: fadeinLoad 1s 0.4s forwards;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-animation: fadeinLoad 0.9s 0.4s forwards;
+          animation: fadeinLoad 0.9s 0.4s forwards;
   opacity: 0;
   box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   -webkit-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
@@ -1369,6 +1368,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   color: rgb(0, 0, 0);
   font-weight: 600;
 }
+
 @media (max-width: 1100px) {
   .preload-container {
     -webkit-box-orient: vertical;

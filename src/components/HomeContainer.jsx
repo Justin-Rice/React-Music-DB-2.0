@@ -23,33 +23,6 @@ export default function HomeContainer(props){
     
       }
 
-    //TODO: async function that populates page based on random artist in array  NOT ACTIVE
-    async function preload(defaultArtists){
-      randomArtist = defaultArtists[Math.floor(Math.random()*defaultArtists.length)]
-        let artistID = await fetch('https://api.spotify.com/v1/search?q=' +randomArtist +'&type=artist' , searchParams)
-        .then(response=> response.json())
-        .then(data => {
-            console.log(data)
-          // variable that contains artist name, image, and genres 
-         let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres]]
-            console.log(artistBundle);
-          setArtistInfo( [...artistBundle])
-          console.log(artistInfo)
-          return data.artists.items[0].id})
-          .catch((error)=>{
-            console.log(error);
-            setTroubleshoot(true)
-          })
-      //get request with artist ID grab all albums from artist 
-    
-
-      // display those albums to user
-        await fetch('https://api.spotify.com/v1/artists/'+artistID +'/albums'+'?include_groups=album&market=US&limit=30',searchParams)
-       .then(response=> response.json())
-       .then(data => {
-         console.log(data)
-        setAlbums([...data.items])})
-      }
 
       function handleSearchText(e){
         setSearchText(e.target.value);
@@ -70,7 +43,6 @@ export default function HomeContainer(props){
 
       function handleModaLoad(){
         setDisableSearch(!disableSearch);
-        console.log(disableSearch);
       }
 
       //async function that fetchs api data based on what user typed in search box
@@ -83,19 +55,25 @@ export default function HomeContainer(props){
         var artistID = await fetch('https://api.spotify.com/v1/search?q=' +searchText +'&type=artist' , searchParams)
         .then(response=> response.json())
         .then(data => {
-           console.log(data.artists)
+          //  console.log(data.artists)
          // variable that contains artist name, image, and genres 
-         let artistBundle = [data.artists.items[0].name, data.artists.items[0].images[0].url,[...data.artists.items[0].genres], data.artists.items[0].followers.total, data.artists.items[0].external_urls.spotify]
-
+         let artistBundle = [
+          data.artists.items[0].name, 
+          data.artists.items[0].images[0].url,
+          [...data.artists.items[0].genres],
+          data.artists.items[0].followers.total, 
+          data.artists.items[0].external_urls.spotify
+          ]
           setArtistInfo( [...artistBundle])
 
-          return data.artists.items[0].id})
-          .catch((error)=>{
+          return data.artists.items[0].id
+        })
+        .catch((error)=>{
             setTroubleshoot(true)
             console.log(error)
             console.log(troubleshoot)
 
-          })
+        })
       //get request with artist ID grab all albums from artist 
    
     
@@ -124,7 +102,7 @@ export default function HomeContainer(props){
 
           }else{
              //create a new array with the album
-             console.log(outputObj)
+            //  console.log(outputObj)
             outputObj[release_year] = [item];  
           }
         })
@@ -134,7 +112,7 @@ export default function HomeContainer(props){
 
         }else if(inputArr[0]?.album_type == 'single'){
           setSinglesInYears({...outputObj})
-          console.log({...outputObj})
+          // console.log({...outputObj})
         }
       }
 
@@ -151,7 +129,7 @@ export default function HomeContainer(props){
         //runs function that splits album data into  release years
         splitYears(albums, albumYears);
         // console.log(singles.reverse())
-        console.log(singles)
+        // console.log(singles)
      
       })
       .catch((error)=>{
@@ -163,8 +141,6 @@ export default function HomeContainer(props){
         setTroubleshoot(true);
       }
     }
-
-      // console.log(artistInfo)
 
     return (
     <div className='home-container' >
@@ -200,7 +176,8 @@ export default function HomeContainer(props){
               onModalLoad={handleModaLoad}
 
             /> 
-          : null } 
+          : null 
+          } 
       </div>
     </div>
         )

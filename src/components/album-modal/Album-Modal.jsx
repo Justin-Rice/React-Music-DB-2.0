@@ -6,43 +6,42 @@ import tinycolor from "https://esm.sh/tinycolor2";
 export default function AlbumModal(props){
   const [albumInfo, setAlbumInfo] = useState();
   const {colors} = props;
-  
-
-
-  // console.log(colors)
-   
+  useEffect(()=>{preloadAlbum(props.albumID)},[])
 
     const modalMain = tinycolor(colors[1])
     .setAlpha(1)
-  .darken(65)
-  .brighten(18)  
-  // .saturate(15)
-  .desaturate(25)
+    .darken(65)
+    .brighten(18)  
+    .desaturate(25);
     
     const modalSecondary = tinycolor(colors[1])
     .setAlpha(1)
-  .darken(10) 
-  .saturate(15)
-  .lighten()
+    .darken(10)
+    .saturate(15)
+    .lighten();
     
   
   let darkerGradientStyle = {
-    background: `linear-gradient(${modalMain + 'B3'}, ${modalSecondary + 'B3'})`,
-    
-}
-let opaque = {
-  background: `linear-gradient(${modalMain + 'FF'}, ${modalSecondary + 'FF'})`,
-}
-  //  console.log(colors.bgGradientStyle)
-    let searchParams = {
-        method: 'GET',
-        headers: {
-          "Content-Type": 'application/json',
-          "Authorization" : 'Bearer ' + props.accessToken
-        }
-      }
+    background: `linear-gradient(
+      ${modalMain + 'B3'},
+      ${modalSecondary + 'B3'}
+      )`,
+  }
+  let opaque = {
+    background: `linear-gradient(
+      ${modalMain + 'FF'}, 
+      ${modalSecondary + 'FF'}
+      )`,
+  }
 
-    useEffect(()=>{preloadAlbum(props.albumID)},[])
+  let searchParams = {
+      method: 'GET',
+      headers: {
+        "Content-Type": 'application/json',
+        "Authorization" : 'Bearer ' + props.accessToken
+      }
+    }
+
 
     async function preloadAlbum(albumID){
       setAlbumInfo({})

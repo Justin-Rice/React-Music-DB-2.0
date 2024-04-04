@@ -7,22 +7,23 @@ import tinycolor from "https://esm.sh/tinycolor2";
 export default function ArtistBanner(props){
     const [imgColors, setImgColors] = useState();    
     const {artistInfo} = props;
-    // console.log(artistInfo)
 
     let mainColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(25)
     .brighten(5)  
-    .saturate(5)
-let secondaryColor = tinycolor(imgColors?.[1])
+    .saturate(5);
+    
+    let secondaryColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(10) 
-    .lighten()
-
+    .lighten();
 
     const bgGradientStyle = {
-      background: `linear-gradient(${mainColor}A1, ${secondaryColor}A1)`
-  
+      background: `linear-gradient(
+        ${mainColor}A1, 
+        ${secondaryColor}A1
+        )`
   }
     return (
     <>
