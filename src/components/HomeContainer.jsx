@@ -71,7 +71,7 @@ export default function HomeContainer(props){
         .catch((error)=>{
             setTroubleshoot(true)
             console.log(error)
-            console.log(troubleshoot)
+            // console.log(troubleshoot)
 
         })
       //get request with artist ID grab all albums from artist 
