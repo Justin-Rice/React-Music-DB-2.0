@@ -1,8 +1,8 @@
 import './preload.scss';
 
 export default function Preload(props){
-   const {troubleshoot}= props
-   
+   const {troubleshoot} = props
+   console.log(troubleshoot)
 return  (
 <div className="preload-container">
     {troubleshoot == true ?  

@@ -22,6 +22,7 @@ export default function HomeContainer(props){
         }
     
       }
+      var artistID = '';
 
 
       function handleSearchText(e){
@@ -52,11 +53,10 @@ export default function HomeContainer(props){
       setArtistInfo([]);
       //get request using search token 
         
-        var artistID = await fetch('https://api.spotify.com/v1/search?q=' +searchText +'&type=artist' , searchParams)
+         artistID = await fetch('https://api.spotify.com/v1/search?q=' +searchText +'&type=artist' , searchParams)
         .then(response=> response.json())
         .then(data => {
-          //  console.log(data.artists)
-         // variable that contains artist name, image, and genres 
+          // console.log(data)
          let artistBundle = [
           data.artists.items[0].name, 
           data.artists.items[0].images[0].url,
@@ -135,10 +135,13 @@ export default function HomeContainer(props){
       .catch((error)=>{
         console.log(error)
         setTroubleshoot(true);
+        console.log('check4')
+
 
       })
       } else{
         setTroubleshoot(true);
+        console.log('check4')
       }
     }
 

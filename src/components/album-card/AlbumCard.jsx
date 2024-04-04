@@ -10,7 +10,7 @@ export default function AlbumCard(props){
     const [imgColors, setImgColors] = useState();    
     const {name, images} = props.albumData;
     const [isTrue, setIsTrue] = useState(true);
-
+   
     let mainColor = tinycolor(imgColors?.[1])
     .setAlpha(1)
     .darken(25)
@@ -21,16 +21,16 @@ export default function AlbumCard(props){
     .darken(10) 
     .lighten();
  
-    let textColor = '#FFF'
-
+    
+    
     const bgGradientStyle = {
         background: `linear-gradient(${mainColor}F0, ${secondaryColor}F0)`,
         borderRadius: "10px",
+         animation: `slidenfade ${props.renderTimer}ms`
+
     }
 
-    const textGradientStyle = {
-        color: textColor,
-    }
+  
 
 
     function handleAlbumClick(){
@@ -69,7 +69,7 @@ export default function AlbumCard(props){
                 <img className='card-image'src={props.albumData.images[1].url} alt="" />
             </ColorExtractor>
                 <div className="card-content">
-                    <div className="card-title" style={textGradientStyle}>{name}</div>
+                    <div className="card-title">{name}</div>
                     <div className="card-release-date"></div>
                     <div className="card-rating"></div>
                 </div>

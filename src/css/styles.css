@@ -7,15 +7,15 @@
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -78,6 +78,52 @@ h1, h2, h3, h4, h5, h5, h6, p {
     opacity: 0;
   }
 }
+@-webkit-keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 @-webkit-keyframes slide-in-top {
   0% {
     opacity: 0;
@@ -126,15 +172,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -176,6 +222,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -304,7 +373,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   height: 40px;
   padding-left: 31px;
   outline: none;
-  background-color: #1fc577;
+  background-color: rgb(27, 221, 102);
   color: #000000;
   border: 3px solid rgb(27, 221, 102);
   border-radius: 14px;
@@ -335,14 +404,19 @@ h1, h2, h3, h4, h5, h5, h6, p {
           transition-timing-function: cubic-bezier(0, 0, 1, 1);
   position: absolute;
   left: 8px;
-  fill: #4660DC;
+  fill: #000000;
   background-color: none;
   height: 20px;
   cursor: pointer;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+.search-bar .custom_input .svg_icon:hover {
+  fill: #252525;
 }
 
 .search-bar-large {
-  width: 190px;
+  width: 175px;
   padding: -80px;
 }
 .search-bar-large .svg_icon {
@@ -370,15 +444,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -420,6 +494,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -633,15 +730,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -683,6 +780,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -857,15 +977,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -907,6 +1027,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -949,7 +1092,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
 }
 .home-album-content {
-  width: 70%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -970,7 +1112,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
       flex-wrap: wrap;
   gap: 20px 12px;
   margin-top: 60px;
-  max-width: 1350px;
+  max-width: 1100px;
   z-index: 2;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -979,7 +1121,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   font-family: Lex;
 }
 .home-album-content .album-container {
-  width: 65%;
+  max-width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -996,21 +1138,22 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .home-album-content .album-container .music-type {
   font-size: 40px;
   color: rgb(27, 221, 102);
-  background-color: rgba(7, 212, 86, 0.1);
   border-radius: 10px;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   text-indent: 10px;
-  padding: 2px 2px 2px 2px;
+  padding: 15px 2px 15px 2px;
   font-weight: 550;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  -webkit-animation: fadeinLoad 1s 0.4s forwards;
+          animation: fadeinLoad 1s 0.4s forwards;
+  opacity: 0;
 }
 .home-album-content .album-container .album-year {
   font-size: 30px;
   color: white;
   position: relative;
-  top: 0px;
-  margin-top: 20px;
+  top: 10px;
+  margin-top: 60px;
   margin-bottom: 20px;
   padding-right: 80px;
   width: 100%;
@@ -1018,13 +1161,16 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-left: 5px;
   margin-right: 80px;
   font-weight: 500;
+  opacity: 0;
+  -webkit-animation: slidenfade 0.9s forwards;
+          animation: slidenfade 0.9s forwards;
 }
 .home-album-content .album-container .album-year::after {
   content: "";
   display: block;
   width: 220px;
   height: 4px;
-  border-radius: 2px;
+  border-radius: 1px;
   background-color: rgb(27, 221, 102);
   opacity: 80%;
   position: relative;
@@ -1058,6 +1204,14 @@ h1, h2, h3, h4, h5, h5, h6, p {
     size: 80%;
   }
 }
+@media (max-width: 900px) {
+  .home-album-content .album-container .album-years-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -1067,15 +1221,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -1117,6 +1271,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -1162,8 +1339,6 @@ h1, h2, h3, h4, h5, h5, h6, p {
   z-index: -99;
   height: 140px;
   width: 370px;
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1176,19 +1351,16 @@ h1, h2, h3, h4, h5, h5, h6, p {
   border-radius: 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-animation: fadeinLoad 0.9s 0.4s forwards;
-          animation: fadeinLoad 0.9s 0.4s forwards;
+  -webkit-animation: slidenfade 0.9s forwards;
+          animation: slidenfade 0.9s forwards;
   opacity: 0;
-  box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
-  -webkit-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
-  -moz-box-shadow: -1px -1px 9px 5px rgba(0, 0, 0, 0.44);
   cursor: pointer;
 }
 .album-card .card-image {
   height: 140px;
   width: 140px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom-left-radius: 9px;
+  border-top-left-radius: 9px;
   opacity: 90%;
   z-index: 10;
 }
@@ -1217,12 +1389,24 @@ h1, h2, h3, h4, h5, h5, h6, p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin-right: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: white;
 }
 
 .album-card:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 500px) {
+  .album-card {
+    width: 300px;
+  }
+  .album-card .card-title {
+    width: 150px;
+    font-size: 0.3em;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -1232,15 +1416,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -1282,6 +1466,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -1395,15 +1602,15 @@ h1, h2, h3, h4, h5, h5, h6, p {
 
 html, body {
   height: 100%;
-  background: radial-gradient(circle, rgb(15, 14, 14) 0%, rgb(46, 46, 46) 100%);
+  background: radial-gradient(circle, rgb(20, 19, 19) 0%, rgb(8, 8, 8) 100%);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
-  width: 5px; /* Mostly for vertical scrollbars */
-  height: 10px; /* Mostly for horizontal scrollbars */
+  width: 0px;
+  height: 0px; /* Mostly for horizontal scrollbars */
 }
 
 ::-webkit-scrollbar-thumb { /* Foreground */ }
@@ -1445,6 +1652,29 @@ h1, h2, h3, h4, h5, h5, h6, p {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes slidenfade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+  }
+  10% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes slide-in-top {
@@ -1505,6 +1735,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
   padding-top: 2px;
   width: 700px;
   border-radius: 10px;
+  opacity: 0;
+  -webkit-animation: slidenfade 0.3s forwards;
+          animation: slidenfade 0.3s forwards;
 }
 .artist-banner .artist-name {
   margin-top: 6px;
@@ -1577,6 +1810,11 @@ h1, h2, h3, h4, h5, h5, h6, p {
   .artist-banner {
     width: 50%;
   }
+  .artist-banner .artist-info {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .artist-banner .artist-info .artist-image {
     height: 700px;
   }
@@ -1620,6 +1858,5 @@ h1, h2, h3, h4, h5, h5, h6, p {
     width: 300px;
     font-size: 0.6em;
     margin-top: 0px;
-    position: relative;
   }
 }

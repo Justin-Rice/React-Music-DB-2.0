@@ -4,24 +4,24 @@
     z-index: -99;
     height: 140px;
     width: 370px;
-    backdrop-filter: blur(15px);
+    // backdrop-filter: blur(15px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
     transition: 0.3s;
-    animation: fadeinLoad 0.9s 0.4s forwards;
-    opacity: 0;
-    box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
-    -webkit-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
-    -moz-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+    animation: slidenfade 0.9s  forwards;
+     opacity: 0;
+    // box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+    // -webkit-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
+    // -moz-box-shadow: -1px -1px 9px 5px rgba(0,0,0,0.44);
     cursor: pointer;
 
     .card-image{
         height: 140px;
         width: 140px;
-        border-bottom-left-radius: 5px;
-        border-top-left-radius: 5px;
+        border-bottom-left-radius: 9px;
+        border-top-left-radius: 9px;
         opacity: 90%;
         z-index: 10;
     }
@@ -47,6 +47,8 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         margin-right: 15px;
+        transition: 0.3s;
+        color: white;
     }
 }
 
@@ -61,5 +63,18 @@
 @media (min-width: 1380px) {
 
 
+}
+
+@media (max-width:500px) {
+    .album-card{
+        width: 300px;
+
+        .card-title{
+            width: 150px;
+            font-size: .3em;
+
+        }
+    }
+    
 }
 
