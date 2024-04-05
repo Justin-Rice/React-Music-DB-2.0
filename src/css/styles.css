@@ -418,6 +418,28 @@ h1, h2, h3, h4, h5, h5, h6, p {
 .search-bar .custom_input .svg_icon:hover {
   fill: #252525;
 }
+.search-bar .search {
+  color: rgb(240, 238, 238);
+  font-family: Lex;
+  position: fixed;
+  right: -50px;
+  height: 35px;
+  width: 40px;
+  background-color: rgb(23, 204, 93);
+  line-height: 35px;
+  text-align: center;
+  border-radius: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: 600;
+}
+.search-bar .search:hover {
+  color: white;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-color: rgb(27, 221, 102);
+}
 
 .search-bar-large {
   width: 175px;
@@ -853,7 +875,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   margin-top: 1px;
   overflow-x: scroll;
   border-radius: 0px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .tracklist .track .track-info {
   display: -webkit-box;
@@ -869,13 +891,14 @@ h1, h2, h3, h4, h5, h5, h6, p {
   height: 15px;
 }
 .tracklist .track .track-info .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34;
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 50, "opsz" 34;
   color: rgb(27, 221, 102);
-  color: red;
-  font-size: 19px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
   position: relative;
   top: 3px;
   margin-right: 6px;
+  margin-left: 5px;
 }
 .tracklist .track .track-info .track-name {
   width: 80%;
@@ -905,6 +928,7 @@ h1, h2, h3, h4, h5, h5, h6, p {
   overflow: visible;
   height: 30px;
   width: 12px;
+  font-size: 0.9em;
 }
 .tracklist .track .track-info .track-length {
   margin-right: 10px;
@@ -914,11 +938,12 @@ h1, h2, h3, h4, h5, h5, h6, p {
 }
 .tracklist .track .track-artist-container {
   margin-left: 55px;
+  max-width: 76%;
 }
 .tracklist .track .track-artist a {
   position: relative;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.6em;
   color: black;
   font-family: Alata;
   letter-spacing: 0.4px;
@@ -970,6 +995,9 @@ h1, h2, h3, h4, h5, h5, h6, p {
     margin-right: 20px;
     letter-spacing: 0.4px;
     font-size: 0.8em;
+  }
+  .tracklist .track .track-artist-container {
+    font-size: 0.6em;
   }
 }
 * {
@@ -1383,23 +1411,27 @@ h1, h2, h3, h4, h5, h5, h6, p {
           align-items: center;
 }
 .album-card .card-title {
-  line-height: 30px;
+  line-height: 32px;
   height: 122px;
-  width: 210px;
+  width: 215px;
   font-size: 0.45em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  margin-right: 15px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  color: white;
+  margin-right: 10px;
+  padding-left: 5px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: rgb(255, 237, 237);
 }
 
 .album-card:hover {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.21);
+}
+.album-card:hover .card-title {
+  color: rgb(255, 255, 255);
 }
 
 @media (max-width: 500px) {
@@ -1554,8 +1586,8 @@ h1, h2, h3, h4, h5, h5, h6, p {
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(27, 221, 102)), to(rgb(9, 71, 33)));
   background-image: linear-gradient(to top, rgb(27, 221, 102), rgb(9, 71, 33));
   border-radius: 20px;
-  -webkit-animation: slide-in-top 0.8s;
-          animation: slide-in-top 0.8s;
+  -webkit-animation: slide-in-top 1.5s;
+          animation: slide-in-top 1.5s;
 }
 .preload-container .preload .preload-header {
   font-size: 2.5em;

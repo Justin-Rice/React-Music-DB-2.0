@@ -10,7 +10,7 @@
             margin-top: 1px;
             overflow-x: scroll;
             border-radius: 0px;
-            background-color:rgb(0,0,0,0.2);
+            background-color:rgb(0,0,0,0.3);
             .track-info{
                 display: flex;
                 align-items: center;
@@ -19,12 +19,14 @@
                 height: 15px;
 
                 .material-symbols-outlined{
-                    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 50, "opsz" 34; color: structure.$text;
-                    color: red;
-                    font-size:19px;
+                    font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 50, "opsz" 34; color: structure.$text;
+                    color: rgb(0, 0, 0);
+                    font-size:17px;
+                    // border-radius: 40px;
                     position: relative;
                      top: 3px;
                      margin-right: 6px;
+                     margin-left: 5px;
                     }
 
                     .track-name{
@@ -57,6 +59,7 @@
                         overflow:visible;
                         height: 30px;
                         width: 12px;
+                        font-size: 0.9em;
                     }
 
                     .track-length{
@@ -69,17 +72,25 @@
             }
             .track-artist-container{
                 margin-left: 55px;
+                max-width: 76%;
+                // overflow-x: hidden;
+                // white-space: nowrap;
+                // text-overflow:ellipsis;
+                // background-color: orange;
             }
 
             .track-artist a{
                 position: relative;
                 text-decoration: none;
-                font-size: 0.7em;
+                font-size: 0.6em;
                 color: black;
                 font-family: Alata;
                 letter-spacing: 0.4px;
                 font-weight: 100;
                 transition: 0.2s;
+                // background-color: red;
+                // border: sandybrown 1px solid;
+                // max-width: 500px;
             }
 
             .track-artist a:hover{
@@ -131,8 +142,13 @@
                         letter-spacing: 0.4px;
                         font-size: .8em;
                     }
-        
+
+                
                 }
+                .track-artist-container{
+                    font-size: 0.6em;
+                }
+    
             
             }
         }

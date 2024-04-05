@@ -3,7 +3,6 @@ import './NavBar.scss';
 
 
 export default function NavBar(props){
-    
     return(
     <div className="navbar">
         <div onClick={()=>{location.reload()}}className="nav-title">Music Db</div>
@@ -29,6 +28,7 @@ export default function NavBar(props){
                     >   
                     </input>
             </div>
+            <div onClick={props.onSearchEnter} className="search">Go</div>
         </div>
     </div>
     )

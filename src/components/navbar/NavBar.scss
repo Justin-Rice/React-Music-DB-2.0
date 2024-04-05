@@ -96,6 +96,26 @@
         }
           
     }
+    .search{
+        color: rgb(240, 238, 238);
+        font-family: Lex;
+        position: fixed;
+        right: -50px;
+        height: 35px;
+        width: 40px;
+        background-color:rgb(23, 204, 93);
+        line-height: 35px;
+        text-align: center;
+        border-radius: 30px;
+        transition: 0.3s;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .search:hover{
+        color: white;
+        transition: 0.3s ease-in-out;
+        background-color: rgb(27, 221, 102);
+    }
    
 }
 

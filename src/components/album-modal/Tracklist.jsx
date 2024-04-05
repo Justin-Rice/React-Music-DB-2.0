@@ -45,11 +45,12 @@ return (
                     <div className="track-info"> 
                     <span className="track-number">{index + 1}.</span> 
                         <div className="track-name">   
-                            {explicit &&  
-                            <span className="material-symbols-outlined">explicit</span>
-                            } <a target='_blank'href={track.external_urls.spotify}>
+                        <a target='_blank'href={track.external_urls.spotify}>
                               {name}
                              </a> 
+                            {explicit &&  
+                            <span className="material-symbols-outlined">explicit</span>
+                            } 
                         </div>
                         <div className="track-length">
                             {trackLength}

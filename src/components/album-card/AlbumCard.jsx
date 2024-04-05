@@ -70,8 +70,6 @@ export default function AlbumCard(props){
             </ColorExtractor>
                 <div className="card-content">
                     <div className="card-title">{name}</div>
-                    <div className="card-release-date"></div>
-                    <div className="card-rating"></div>
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ export default function HomeContainer(props){
     const [troubleshoot, setTroubleshoot] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [disableSearch, setDisableSearch]= useState(false);
+    
     let searchParams = {
         method: 'GET',
         headers: {
